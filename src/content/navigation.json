@@ -1,0 +1,34 @@
+{
+  "header": [
+    { "label": "Stores", "href": "/stores" },
+    { "label": "Offers", "href": "/offers" },
+    { "label": "Events", "href": "/events" },
+    { "label": "News", "href": "/news" },
+    { "label": "Visit", "href": "/contact" }
+  ],
+  "footerColumns": [
+    {
+      "title": "Explore",
+      "links": [
+        { "label": "Store directory", "href": "/stores" },
+        { "label": "Latest offers", "href": "/offers" },
+        { "label": "What's on", "href": "/events" },
+        { "label": "Centre news", "href": "/news" }
+      ]
+    },
+    {
+      "title": "Visit",
+      "links": [
+        { "label": "Plan your visit", "href": "/contact" },
+        { "label": "Getting here", "href": "/contact#getting-here" },
+        { "label": "Centre plan", "href": "/contact#floorplan" },
+        { "label": "Retail lettings", "href": "/contact#lettings" }
+      ]
+    }
+  ],
+  "legal": [
+    { "label": "Privacy Policy", "href": "/legal/privacy-policy" },
+    { "label": "Cookie Policy", "href": "/legal/cookie-policy" },
+    { "label": "Accessibility", "href": "/legal/accessibility" }
+  ]
+}

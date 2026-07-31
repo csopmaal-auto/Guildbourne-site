@@ -1,0 +1,36 @@
+{
+  "global": {
+    "siteName": "Guildbourne Centre",
+    "titleTemplate": "%s · Guildbourne Centre",
+    "defaultTitle": "Guildbourne Centre · Indoor shopping in the heart of Worthing",
+    "defaultDescription": "Worthing's only indoor shopping centre — 20+ independent stores, family favourites and everyday essentials under one roof, open seven days a week.",
+    "ogImage": "/images/centre/exterior.jpg",
+    "twitterHandle": "@GuildbourneCtr"
+  },
+  "routes": {
+    "/": {
+      "title": "",
+      "description": ""
+    },
+    "/stores": {
+      "title": "Store directory",
+      "description": "Browse every store at the Guildbourne Centre, Worthing — search by name or filter by category, with opening hours and contact details for each."
+    },
+    "/offers": {
+      "title": "Offers & highlights",
+      "description": "The latest offers, perks and store highlights from the Guildbourne Centre's independent retailers in Worthing."
+    },
+    "/events": {
+      "title": "What's on",
+      "description": "Markets, workshops and seasonal events at the Guildbourne Centre, Worthing — see what's coming up under our roof."
+    },
+    "/news": {
+      "title": "News & stories",
+      "description": "Centre updates, new arrivals and stories from the independent retailers of the Guildbourne Centre, Worthing."
+    },
+    "/contact": {
+      "title": "Plan your visit",
+      "description": "Opening hours, directions, parking and contact details for the Guildbourne Centre, Worthing — plus our enquiry form and centre floorplan."
+    }
+  }
+}

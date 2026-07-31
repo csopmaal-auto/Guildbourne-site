@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "summer-makers-market",
+    "title": "Summer Makers Market",
+    "startDate": "2026-08-15",
+    "endDate": "",
+    "timeLabel": "10:00am – 4:00pm",
+    "location": "Central Mall",
+    "excerpt": "Local makers, small-batch producers and one-of-a-kind finds fill the mall for a day.",
+    "body": [
+      "Stalls from local makers and small producers join our resident independents for one day only — think prints, ceramics, preserves, candles and more.",
+      "Entry is free and the market runs right through the centre, so you can browse the stalls and the stores in one easy loop.",
+      "*This is a sample event created with the new website — edit or replace it from the admin area.*"
+    ],
+    "image": "",
+    "featured": true
+  },
+  {
+    "slug": "half-term-craft-mornings",
+    "title": "Half-Term Craft Mornings",
+    "startDate": "2026-10-27",
+    "endDate": "2026-10-29",
+    "timeLabel": "10:30am – 12:30pm",
+    "location": "Central Mall",
+    "excerpt": "Free drop-in craft sessions for little hands during October half term.",
+    "body": [
+      "Bring the kids along for free drop-in craft sessions in the mall — seasonal makes, friendly helpers and everything provided.",
+      "Sessions are drop-in, no booking needed. Children must be accompanied by an adult.",
+      "*This is a sample event created with the new website — edit or replace it from the admin area.*"
+    ],
+    "image": "",
+    "featured": false
+  },
+  {
+    "slug": "christmas-lights-switch-on",
+    "title": "Christmas Lights Switch-On",
+    "startDate": "2026-11-21",
+    "endDate": "",
+    "timeLabel": "From 4:30pm",
+    "location": "Centre entrances",
+    "excerpt": "The moment the Guildbourne starts to sparkle — join us as the centre lights up for the season.",
+    "body": [
+      "Join us as the centre's festive lights go on for the season, with late browsing at participating stores and a few sweet surprises for the little ones.",
+      "*This is a sample event created with the new website — edit or replace it from the admin area.*"
+    ],
+    "image": "",
+    "featured": false
+  },
+  {
+    "slug": "spring-charity-fair",
+    "title": "Spring Charity Fair",
+    "startDate": "2026-04-18",
+    "endDate": "",
+    "timeLabel": "10:00am – 3:00pm",
+    "location": "Central Mall",
+    "excerpt": "A day of stalls and fundraising in support of local causes, including the Brent Lodge wildlife hospital.",
+    "body": [
+      "Local charities and community groups took over the mall for a day of stalls, tombolas and fundraising — with our own Brent Lodge shop flying the flag for the wildlife hospital.",
+      "*This is a sample event created with the new website — edit or replace it from the admin area.*"
+    ],
+    "image": "",
+    "featured": false
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "fully-indoor",
+    "title": "Fully indoor",
+    "icon": "umbrella",
+    "description": "Worthing's only indoor shopping centre — 20+ stores under one roof, whatever the weather."
+  },
+  {
+    "slug": "central-location",
+    "title": "Central location",
+    "icon": "map-pin",
+    "description": "Right in the heart of Worthing town centre, a short stroll from the seafront."
+  },
+  {
+    "slug": "open-seven-days",
+    "title": "Open seven days",
+    "icon": "clock",
+    "description": "Open every day of the week, from 8am Monday to Saturday and 9:30am on Sundays."
+  },
+  {
+    "slug": "family-friendly",
+    "title": "Family friendly",
+    "icon": "smile",
+    "description": "A toy shop, a chocolate factory and escape rooms — the small ones are well looked after."
+  },
+  {
+    "slug": "venue-hire",
+    "title": "Venue hire",
+    "icon": "building-2",
+    "description": "An auditorium, meeting rooms and coworking space, available through Rooms."
+  },
+  {
+    "slug": "retail-lettings",
+    "title": "Retail lettings",
+    "icon": "key-round",
+    "description": "Join the centre — unit enquiries are handled by Flude Property Consultants."
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "slug": "privacy-policy",
+    "title": "Privacy Policy",
+    "updated": "2026-07-30",
+    "body": [
+      "The Guildbourne Centre (operated by Factory Outlets Ltd) respects your privacy. This policy explains what personal information this website collects and how it is used.",
+      "## What we collect",
+      "**Contact form.** When you send us a message we receive the details you provide — your name, email address, optional phone number and your message. We use these solely to respond to your enquiry.",
+      "**Newsletter.** If you subscribe to our newsletter we store your email address in order to send you occasional centre updates. Every email includes an unsubscribe link, and you can unsubscribe at any time.",
+      "**Nothing else.** This website does not use advertising trackers or sell data to third parties.",
+      "## How long we keep it",
+      "Enquiries are kept only as long as needed to deal with your question. Newsletter addresses are kept until you unsubscribe.",
+      "## Your rights",
+      "Under UK GDPR you may request a copy of the personal data we hold about you, ask us to correct it, or ask us to delete it. Contact us at contact@guildbournecentre.co.uk or write to Factory Outlets Ltd, 42 Guildbourne Centre, Worthing, West Sussex, BN11 1LZ.",
+      "## Questions",
+      "If you have any questions about this policy, contact us at contact@guildbournecentre.co.uk or call 01903 207327."
+    ]
+  },
+  {
+    "slug": "cookie-policy",
+    "title": "Cookie Policy",
+    "updated": "2026-07-30",
+    "body": [
+      "This website keeps cookies to a minimum.",
+      "## What we use",
+      "**No tracking cookies.** The public website does not set advertising or analytics cookies, and does not track you across other sites.",
+      "**One essential cookie.** A single session cookie is used only by centre staff to sign in to the website's admin area. It is essential for that purpose, is not used for tracking, and is never set for ordinary visitors browsing the site.",
+      "**Embedded maps.** The contact page can display an embedded map. The map only loads when you choose to view it; at that point the map provider may set its own cookies under its own policy.",
+      "## Managing cookies",
+      "You can clear or block cookies at any time in your browser settings. Because we set no tracking cookies, blocking cookies will not affect your experience of this site."
+    ]
+  },
+  {
+    "slug": "accessibility",
+    "title": "Accessibility Statement",
+    "updated": "2026-07-30",
+    "body": [
+      "We want everyone to be able to use this website and enjoy visiting the centre.",
+      "## This website",
+      "The site is built to work with keyboards and screen readers: pages use a logical heading structure, images carry alternative text, interactive elements have visible focus states, and colour contrast meets WCAG guidance. Animations respect your device's reduced-motion preference.",
+      "If anything on this site is difficult for you to use, we would genuinely like to know — email contact@guildbournecentre.co.uk and we will do our best to fix it.",
+      "## The centre",
+      "The shopping mall is indoor and on one level. If you have a specific access question ahead of your visit — or need assistance while you're here — call us on 01903 207327 and we'll be happy to help.",
+      "Assistance dogs are welcome throughout the centre."
+    ]
+  }
+]

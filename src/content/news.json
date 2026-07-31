@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "welcome-to-the-new-guildbourne-website",
+    "title": "A new home online: welcome to the new Guildbourne website",
+    "date": "2026-07-30",
+    "category": "Centre news",
+    "excerpt": "A fresh look for the centre online — browse every store, see what's on and get in touch, all in one place.",
+    "body": [
+      "The Guildbourne Centre has a brand-new website. You're looking at it.",
+      "The new site brings together everything in one place: a full store directory you can search and filter, opening hours, offers and highlights from our retailers, upcoming events, and an easy way to get in touch — whether that's a general enquiry, lost property or a question about venue hire.",
+      "Every store now has its own page with contact details, links and opening information, so you can check before you travel. And because the site is fully responsive, it works just as well on your phone as it does at a desk.",
+      "We'll be keeping the news and events sections up to date with what's happening under our roof — so check back soon, or follow us on social media for the latest."
+    ],
+    "image": "/images/centre/exterior.jpg",
+    "featured": true
+  },
+  {
+    "slug": "meet-the-independents",
+    "title": "Meet the independents: a walk around the Guildbourne",
+    "date": "2026-07-14",
+    "category": "Community",
+    "excerpt": "Handmade chocolate, small-batch fragrance, silver jewellery and a 30-year-old surplus specialist — the people who make the centre what it is.",
+    "body": [
+      "Ask anyone who shops here regularly and they'll tell you: the Guildbourne's character comes from its independents.",
+      "There's Charlene's Chocolate Factory, where the bars, truffles and lollipops are made by hand in small batches. A few doors down, Formula Fragrances blends vegan, preservative-free scents and bespoke Extrait de parfum in its small-batch fragrance lab. Sewsilver has been the go-to for sterling silver jewellery, unusual gifts and greeting cards, while BDR Trading Surplus — established in Worthing for three decades — remains the town's only high-street stockist for serious outdoor and surplus gear.",
+      "Add a family-run butcher, an independent toy shop that will ring-and-reserve anything for you, live escape rooms and a science-backed fitness studio, and you have a centre that feels genuinely local.",
+      "Browse the full line-up in our store directory — and next time you're in town, come and say hello."
+    ],
+    "image": "",
+    "featured": false
+  },
+  {
+    "slug": "guide-to-a-perfect-saturday",
+    "title": "Your guide to a perfect Saturday at the centre",
+    "date": "2026-06-20",
+    "category": "Guides",
+    "excerpt": "From an early start at the butcher's to an afternoon escape room — how to make a day of it at the Guildbourne.",
+    "body": [
+      "Start early: we open at 8am on Saturdays, and the morning is the calmest time to browse. Pick up the weekend's joint from Guildbourne Meats, then reward yourself with something from Charlene's Chocolate Factory.",
+      "Mid-morning is for wandering — silver and gifts at Sewsilver, a new outfit at Contrast Clothing, toys for the little ones at Toy Barnhaus (they price match, so no need to shop around).",
+      "In the afternoon, book yourselves into Mindworks Escape Rooms and see if your team can beat the clock. If you'd rather sweat it out, Fit Lab runs coach-led group sessions through the day.",
+      "We're open until 6pm — and the seafront is a short stroll away when you're done."
+    ],
+    "image": "",
+    "featured": false
+  }
+]

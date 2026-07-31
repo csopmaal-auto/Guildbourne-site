@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "toy-barnhaus-price-match",
+    "title": "Price-match promise",
+    "store": "toy-barnhaus",
+    "badge": "In store",
+    "validUntil": "",
+    "excerpt": "Found it cheaper elsewhere? Toy Barnhaus will price match — just ask at the counter.",
+    "body": [
+      "Toy Barnhaus price matches, so you can buy from an independent with confidence. See in store for details — and remember you can ring ahead to reserve any toy."
+    ],
+    "image": "",
+    "cta": { "label": "Visit Toy Barnhaus", "href": "/stores/toy-barnhaus" }
+  },
+  {
+    "slug": "formula-fragrances-bespoke-scents",
+    "title": "Bespoke scents, made for you",
+    "store": "formula-fragrances",
+    "badge": "Service",
+    "validUntil": "",
+    "excerpt": "Small-batch, vegan Extrait de parfum — blended to order in Worthing's own fragrance lab.",
+    "body": [
+      "Formula Fragrances crafts clean, preservative-free fragrance in small batches — including bespoke scents and refills. Call in to talk through what you're after."
+    ],
+    "image": "",
+    "cta": { "label": "Visit Formula Fragrances", "href": "/stores/formula-fragrances" }
+  },
+  {
+    "slug": "mindworks-group-escapes",
+    "title": "Group escapes at Mindworks",
+    "store": "mindworks-escape-rooms",
+    "badge": "Bookable",
+    "validUntil": "",
+    "excerpt": "Birthdays, team days and family showdowns — book a room and beat the clock together.",
+    "body": [
+      "Mindworks Escape Rooms hosts groups for birthdays, corporate days and get-togethers. Book your slot on their website and turn up ready to puzzle."
+    ],
+    "image": "",
+    "cta": { "label": "Visit Mindworks", "href": "/stores/mindworks-escape-rooms" }
+  },
+  {
+    "slug": "summer-at-the-guildbourne",
+    "title": "Summer at the Guildbourne",
+    "store": "",
+    "badge": "Seasonal",
+    "validUntil": "2026-08-31",
+    "excerpt": "Longer days, a makers market and plenty to discover — make the most of summer under our roof.",
+    "body": [
+      "Summer is in full swing at the centre — with the Makers Market on 15 August, seven-day opening and the seafront a short stroll away. *This is a sample seasonal highlight — edit or replace it from the admin area.*"
+    ],
+    "image": "/images/centre/exterior.jpg",
+    "cta": { "label": "See what's on", "href": "/events" }
+  }
+]

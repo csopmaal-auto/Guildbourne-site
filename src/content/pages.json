@@ -1,0 +1,22 @@
+{
+  "stores": {
+    "eyebrow": "The directory",
+    "heading": "Every store, under one roof",
+    "intro": "Browse the full Guildbourne line-up — search by name, filter by category, or just wander through."
+  },
+  "offers": {
+    "eyebrow": "Worth knowing",
+    "heading": "Offers & highlights",
+    "intro": "Promotions, perks and services worth a detour — straight from our stores."
+  },
+  "events": {
+    "eyebrow": "What's on",
+    "heading": "Events at the Guildbourne",
+    "intro": "Markets, workshops and seasonal moments. Most events are free — just turn up."
+  },
+  "news": {
+    "eyebrow": "The journal",
+    "heading": "News & stories",
+    "intro": "Centre updates, new arrivals and the people behind the counters."
+  }
+}

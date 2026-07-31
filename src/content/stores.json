@@ -1,0 +1,424 @@
+[
+  {
+    "slug": "b-and-m",
+    "name": "B&M",
+    "category": "Home & Value",
+    "unit": "1-8",
+    "excerpt": "Big brands at value prices",
+    "description": [
+      "We are the UK's leading variety goods value retailer, providing customers with a limited assortment of the best selling items across a range of Grocery and General Merchandise categories, all at value prices."
+    ],
+    "phone": "0333 034 6827",
+    "email": "",
+    "website": "https://www.bmstores.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/bmstores/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/bm_stores/" }
+    ],
+    "logo": "/images/stores/bAndM.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "bdr-trading-surplus",
+    "name": "BDR Trading Surplus",
+    "category": "Outdoor & Workwear",
+    "unit": "9",
+    "excerpt": "Government surplus & outdoor gear",
+    "description": [
+      "BDR Trading Surplus is a specialist retailer in Government Surplus and Outdoor gear. Established in Worthing for 30 years, we are the only high street stockist in Worthing for Viper, Jack Pyke, and Web-tex outdoor and pursuit products.",
+      "From Government Surplus, such as HM Forces clothing and equipment, to workwear and Chef's uniforms, camo nets to police shirts, safety fluorescent jackets to Security supplies, BDR Trading Surplus has the gear! We have a collection box to help support Help for Heroes charity and actively support donations to this worthy cause."
+    ],
+    "phone": "01903 213652",
+    "email": "",
+    "website": "https://www.bdrtradingsurplus.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/BDR-Trading-Surplus-341935489725767/" }
+    ],
+    "logo": "/images/stores/bdrTradingSurplus.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "brent-lodge",
+    "name": "Brent Lodge",
+    "category": "Charity & Community",
+    "unit": "10",
+    "excerpt": "Supporting the wildlife hospital",
+    "description": [
+      "Shop supporting the Wildlife Hospital that is dedicated to the treatment, rehabilitation and release of sick, orphaned, and injured wildlife."
+    ],
+    "phone": "01903 215627",
+    "email": "",
+    "website": "https://www.brentlodge.org",
+    "socials": [
+      { "platform": "twitter", "url": "https://www.twitter.com/brentlodge" },
+      { "platform": "facebook", "url": "https://www.facebook.com/brentlodge.wildlife" }
+    ],
+    "logo": "/images/stores/brentLodge.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "broadway-academy",
+    "name": "Broadway Academy",
+    "category": "Beauty & Grooming",
+    "unit": "11",
+    "excerpt": "Hairdressing & barbering academy",
+    "description": [
+      "Broadway Academy is a leading hairdressing and barbering academy. We are committed to providing top-quality education and practical training to our students, empowering them to excel in their careers. With a focus on industry-relevant skills and techniques, we aim to nurture talent and creativity within a supportive learning environment."
+    ],
+    "phone": "01903 942934",
+    "email": "",
+    "website": "https://www.broadwayacademy.org.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/people/Broadway-Academy/61556596964998/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/broadwayacademyy/" }
+    ],
+    "logo": "/images/stores/broadwayAcademy.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "charlenes-chocolate-factory",
+    "name": "Charlene's Chocolate Factory",
+    "category": "Food & Drink",
+    "unit": "12",
+    "excerpt": "Handmade chocolate & gifts",
+    "description": [
+      "Handmade chocolate bars, truffles, lollipops and gifts, made in small batches right here in Worthing."
+    ],
+    "phone": "07912 105391",
+    "email": "",
+    "website": "https://www.charleneschocolatefactory.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/charleneschocolateemporium" },
+      { "platform": "instagram", "url": "https://www.instagram.com/charleneschocolatefactory" }
+    ],
+    "logo": "/images/stores/charlenesChocolateFactory.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "contrast-clothing",
+    "name": "Contrast Clothing",
+    "category": "Fashion",
+    "unit": "13",
+    "excerpt": "Affordable, high-quality fashion",
+    "description": [
+      "Contrast Clothing brings affordable and high quality clothing to the retail market while helping customers find their style in an ever changing fashion industry, producing stylish and high end clothing and accessories at an affordable price."
+    ],
+    "phone": "01903 366363",
+    "email": "info@contrastclothing.co.uk",
+    "website": "http://www.contrastclothing.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "http://www.facebook.com/contrastclothingltd" },
+      { "platform": "instagram", "url": "https://www.instagram.com/contrast_clothing_brand" }
+    ],
+    "logo": "/images/stores/contrastClothing.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "cassino",
+    "name": "Cassino",
+    "category": "Leisure & Entertainment",
+    "unit": "14",
+    "excerpt": "Adult gaming & slots",
+    "description": [
+      "Adult gaming and slots in the heart of the centre."
+    ],
+    "phone": "",
+    "email": "",
+    "website": "https://www.cassino.co.uk",
+    "socials": [
+      { "platform": "twitter", "url": "https://www.twitter.com/cassinosussex" },
+      { "platform": "facebook", "url": "https://www.facebook.com/cassinosussex" }
+    ],
+    "logo": "/images/stores/cassino.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "guildbourne-meats",
+    "name": "Guildbourne Meats",
+    "category": "Food & Drink",
+    "unit": "15",
+    "excerpt": "Your local family butcher",
+    "description": [
+      "We are a family run butchers shop in Worthing offering top quality meat at very reasonable prices."
+    ],
+    "phone": "01903 210227",
+    "email": "",
+    "website": "",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/Guildbourne-Meats-587047114762699" }
+    ],
+    "logo": "/images/stores/guildbourneMeats.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "priya-beauty-nail-bar",
+    "name": "Priya Beauty & Nail Bar",
+    "category": "Beauty & Grooming",
+    "unit": "16",
+    "excerpt": "Nail bar & beauty salon",
+    "description": [
+      "Nail bar and beauty salon in the Guildbourne Centre."
+    ],
+    "phone": "07448 853953",
+    "email": "",
+    "website": "",
+    "socials": [
+      { "platform": "instagram", "url": "https://www.instagram.com/priyabeautyandnailbar/" }
+    ],
+    "logo": "/images/stores/priya.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "fit-lab",
+    "name": "Fit Lab",
+    "category": "Health & Wellbeing",
+    "unit": "17",
+    "excerpt": "Science-backed group workouts",
+    "description": [
+      "FitLab is a science-backed, technology-tracked, coach-inspired group workout designed to produce results from the inside out. The hardest part of our workouts is showing up – we make it simple for you to push yourself and be who you want to be. We don't care what shape you are or how fit you are. If you are serious about working out and having some fun along the journey, we are happy to accommodate.",
+      "The FitLab team comprises of a select group of elite trainers; including Sussex's most respected boxing coaches, ex-champion boxers and current professional fighters. Alongside nationally recognised strength and conditioning coaches and experts in health and well-being. All with one aim; to smash you through your goals.",
+      "We want to build a community within our studio, so that members feel part of a team. A team who will motivate and inspire each other.",
+      "Coming together is a beginning, staying together is progress and working together is success. Come and be a success at FitLab."
+    ],
+    "phone": "01903 680691",
+    "email": "",
+    "website": "https://fitlab.uk",
+    "socials": [
+      { "platform": "twitter", "url": "https://twitter.com/FitLabWorthing" },
+      { "platform": "facebook", "url": "https://www.facebook.com/fitlabworthing.uk" },
+      { "platform": "instagram", "url": "https://www.instagram.com/fitlabworthing" }
+    ],
+    "logo": "/images/stores/fitLab.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "toy-barnhaus",
+    "name": "Toy Barnhaus",
+    "category": "Gifts & Toys",
+    "unit": "18-20",
+    "excerpt": "Independent toy shop",
+    "description": [
+      "Toy Barnhaus, Worthing part of an independent chain of Toy shops based in Sussex and Surrey. We are stocklists of Lego, Playmobil, Micro scooters, Our Generation dolls, Brio, Barbie, Hot wheels, Nerf, Paw Patrol, PJ masks as well as loads more! You can ring and reserve your toy and we also price match (see instore for details)."
+    ],
+    "phone": "01903 233273",
+    "email": "",
+    "website": "https://www.toybarnhaus.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/pages/Toy-Barnhaus-Worthing/693722657336484" }
+    ],
+    "logo": "/images/stores/toyBarnhaus.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "sewsilver",
+    "name": "Sewsilver",
+    "category": "Gifts & Toys",
+    "unit": "21",
+    "excerpt": "Silver jewellery, gifts & cards",
+    "description": [
+      "At Sewsilver you'll find beautiful affordable jewellery, unique gifts and greeting cards. We specialise in gorgeous sterling silver jewellery for ladies, but we also have contemporary gents jewellery in leather and stainless steel. If you're looking for something unusual, a gift for a special occasion or simply a fantastic greetings card, you have come to the right place."
+    ],
+    "phone": "01903 218994",
+    "email": "",
+    "website": "https://www.sewsilver.co.uk/home",
+    "socials": [
+      { "platform": "twitter", "url": "https://www.twitter.com/SEW_Silver" },
+      { "platform": "facebook", "url": "https://www.facebook.com/SEWSilver" }
+    ],
+    "logo": "/images/stores/sewSilver.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "formula-fragrances",
+    "name": "Formula Fragrances",
+    "category": "Beauty & Grooming",
+    "unit": "22",
+    "excerpt": "Small-batch clean fragrance lab",
+    "description": [
+      "Small batch clean fragrance lab. Vegan, preservative-free refills. Bespoke scents & designer inspired Extrait de parfum. Crafted with precision."
+    ],
+    "phone": "01903 208461",
+    "email": "",
+    "website": "https://www.formulafragrances.co.uk",
+    "socials": [
+      { "platform": "instagram", "url": "https://www.instagram.com/formulafragrances_uk/" }
+    ],
+    "logo": "/images/stores/formulaFragrances.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "dr-health",
+    "name": "Dr Health",
+    "category": "Health & Wellbeing",
+    "unit": "23",
+    "excerpt": "Traditional Chinese medicine clinic",
+    "description": [
+      "Traditional Chinese Medicine clinic specializing in Acupuncture, Deep Tuina Massage, Chinese Herbal Remedy, Reflexology, Acupuncture Facial, Ear Candle, Hot Cupping for Weight Loss."
+    ],
+    "phone": "01903 202102",
+    "email": "",
+    "website": "https://www.yourwellway.co.uk",
+    "socials": [],
+    "logo": "/images/stores/drHealth.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "protexu",
+    "name": "ProtexU",
+    "category": "Outdoor & Workwear",
+    "unit": "24",
+    "excerpt": "Safety wear & workwear specialists",
+    "description": [
+      "We are a PPE safety supplier focusing on high-quality safety-wear for Commercial, Industrial & DIY use. Stocking major brands including uvex, SKECHERS Safety, ATG Gloves, DASSY Workwear, Heckel, Milwaukee, NORA Boots, and more. We supply safety shoes, clothing, and workwear for you and for your business - from Trades, to chefswear and catering, caring and nursing, and much more."
+    ],
+    "phone": "07770 605486",
+    "email": "",
+    "website": "https://www.protexu.co.uk/",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/protexU" },
+      { "platform": "instagram", "url": "https://www.instagram.com/protexUsafety" },
+      { "platform": "tiktok", "url": "https://www.tiktok.com/@protexu" }
+    ],
+    "logo": "/images/stores/protexU.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "mindworks-escape-rooms",
+    "name": "Mindworks Escape Rooms",
+    "category": "Leisure & Entertainment",
+    "unit": "25-26",
+    "excerpt": "Live escape rooms",
+    "description": [
+      "Live escape room experiences in the centre of Worthing. Gather your team, pick a room and beat the clock."
+    ],
+    "phone": "07366 615658",
+    "email": "hello@mindworks-escaperooms.co.uk",
+    "website": "https://www.mindworks-escaperooms.co.uk",
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/mindworksescaperooms/" },
+      { "platform": "twitter", "url": "https://www.twitter.com/MindworksGames" }
+    ],
+    "logo": "/images/stores/mindworksEscapeRooms.png",
+    "image": "",
+    "featured": true,
+    "hoursNote": ""
+  },
+  {
+    "slug": "brighton-implant-clinic",
+    "name": "Brighton Implant Clinic",
+    "category": "Health & Wellbeing",
+    "unit": "29",
+    "excerpt": "Award-winning dental care",
+    "description": [
+      "The Brighton Implant Clinic is a group of award-winning dental health clinics that provide personalised and affordable dental care. Renowned for their dental implant treatment, their services also include general dentistry procedures, professional cleaning and cosmetic restorations."
+    ],
+    "phone": "0800 111 6625",
+    "email": "",
+    "website": "https://www.brightonimplantclinic.co.uk",
+    "socials": [
+      { "platform": "twitter", "url": "https://www.twitter.com/dentalimplants8" },
+      { "platform": "facebook", "url": "https://www.facebook.com/pages/Brighton-Implant-Clinic/144201288966961" }
+    ],
+    "logo": "/images/stores/brightonImplantClinic.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "robert-luff",
+    "name": "Robert Luff & Co",
+    "category": "Services",
+    "unit": "30",
+    "excerpt": "Sales & lettings estate agents",
+    "description": [
+      "Robert Luff & Co Sales & Lettings was established in Worthing in 2010. Since then we have opened two new branches in Goring and Lancing covering Littlehampton through to Brighton.",
+      "We are an innovative Estate Agency spotting market trends for our clients so we can generate the maximum amount of interest in their property.",
+      "Although principles of estate agency have changed little over many years, local expertise and professionalism, the way in which we now market our properties has changed drastically. Whilst people still enjoy the property pages in a local paper, most home searches start online, increasingly on mobile devices."
+    ],
+    "phone": "01903 331247",
+    "email": "",
+    "website": "https://www.robertluff.co.uk",
+    "socials": [
+      { "platform": "twitter", "url": "https://www.twitter.com/RobertLuffCo" },
+      { "platform": "facebook", "url": "https://www.facebook.com/RobertLuffCo" }
+    ],
+    "logo": "/images/stores/robertLuff.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  },
+  {
+    "slug": "redeemer",
+    "name": "Redeemer",
+    "category": "Charity & Community",
+    "unit": "44",
+    "excerpt": "A church for Worthing",
+    "description": [
+      "Redeemer is a church that loves Jesus, loves community and loves our town.",
+      "You are welcome to join us for our service on Sunday mornings, visit our website for more information."
+    ],
+    "phone": "07767 115943",
+    "email": "",
+    "website": "https://redeemer.co.uk/",
+    "socials": [
+      { "platform": "instagram", "url": "https://www.instagram.com/redeemer.worthing/" },
+      { "platform": "facebook", "url": "https://www.facebook.com/redeemer.worthing" }
+    ],
+    "logo": "/images/stores/redeemer.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": "Service times are listed on the Redeemer website."
+  },
+  {
+    "slug": "rooms",
+    "name": "Rooms",
+    "category": "Services",
+    "unit": "44",
+    "excerpt": "Venue for events & meetings",
+    "description": [
+      "Rooms is a venue for events, conferences, meetings and more.",
+      "On offer, we have a large auditorium, four multi-use rooms and a casual community-style coworking space."
+    ],
+    "phone": "07767 115943",
+    "email": "",
+    "website": "https://www.roomsworthing.co.uk/",
+    "socials": [
+      { "platform": "instagram", "url": "https://www.instagram.com/rooms.worthing/" },
+      { "platform": "facebook", "url": "https://www.facebook.com/rooms.worthing" }
+    ],
+    "logo": "/images/stores/rooms.png",
+    "image": "",
+    "featured": false,
+    "hoursNote": ""
+  }
+]

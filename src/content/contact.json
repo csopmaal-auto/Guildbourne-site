@@ -1,0 +1,81 @@
+{
+  "header": {
+    "eyebrow": "Visit & contact",
+    "heading": "Plan your visit",
+    "intro": "Opening hours, directions and everything else you need — and a friendly team on the other end of the line if you'd rather just ask."
+  },
+  "form": {
+    "heading": "Send us a message",
+    "intro": "We aim to reply within two working days.",
+    "subjects": [
+      "General enquiry",
+      "Store enquiry",
+      "Lost property",
+      "Venue hire",
+      "Retail lettings",
+      "Feedback"
+    ],
+    "successHeading": "Message sent",
+    "successBody": "Thanks for getting in touch — we'll come back to you as soon as we can."
+  },
+  "gettingHere": [
+    {
+      "mode": "walk",
+      "title": "On foot",
+      "body": "We're in the heart of Worthing town centre, a short stroll from the seafront and the main shopping streets."
+    },
+    {
+      "mode": "car",
+      "title": "By car",
+      "body": "Several town-centre car parks are within a few minutes' walk of the centre, including the High Street multi-storey."
+    },
+    {
+      "mode": "bus",
+      "title": "By bus",
+      "body": "Frequent local services stop in the town centre, moments from our entrances."
+    },
+    {
+      "mode": "train",
+      "title": "By train",
+      "body": "Worthing station is around a ten-minute walk away, with regular services along the coast and to London."
+    }
+  ],
+  "map": {
+    "query": "Guildbourne Centre, Worthing BN11 1LZ",
+    "linkLabel": "Open in Google Maps"
+  },
+  "floorplan": {
+    "heading": "Find your way around",
+    "body": "One level, easy to navigate — here's the lie of the land before you arrive.",
+    "image": "/images/centre/floorplan.svg",
+    "caption": "The Guildbourne Centre floorplan"
+  },
+  "faqs": [
+    {
+      "question": "What are your opening hours?",
+      "answer": "We're open Monday to Saturday 8:00am – 6:00pm, Sundays 9:30am – 4:00pm, and Bank Holiday Mondays 10:00am – 4:00pm. We're closed on Christmas Day, Boxing Day, New Year's Day and Easter Sunday. Individual stores may keep slightly different hours."
+    },
+    {
+      "question": "Where can I park?",
+      "answer": "The centre doesn't have its own car park, but several town-centre car parks are a few minutes' walk away, including the High Street multi-storey."
+    },
+    {
+      "question": "Is the centre accessible?",
+      "answer": "The shopping mall is indoor and on one level. If you have a specific access question, call us on 01903 207327 and we'll be happy to help."
+    },
+    {
+      "question": "Are dogs welcome?",
+      "answer": "Assistance dogs are always welcome throughout the centre. Individual stores set their own policies for other dogs — when in doubt, just ask."
+    },
+    {
+      "question": "How do I enquire about renting a unit?",
+      "answer": "Retail lettings are handled by Flude Property Consultants on 01273 727070 — see the lettings section below."
+    }
+  ],
+  "letting": {
+    "heading": "Retail space at the Guildbourne",
+    "body": "Join a community of independents and established names in the centre of Worthing. Unit enquiries are handled by our letting agents.",
+    "agent": "Flude Property Consultants",
+    "phone": "01273 727070"
+  }
+}

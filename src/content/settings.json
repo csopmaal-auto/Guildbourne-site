@@ -1,0 +1,85 @@
+{
+  "siteName": "Guildbourne Centre",
+  "tagline": "Worthing's only indoor shopping centre",
+  "operator": "Factory Outlets Ltd",
+  "contact": {
+    "phone": "01903 207327",
+    "email": "contact@guildbournecentre.co.uk",
+    "addressLine1": "The Guildbourne Centre",
+    "addressLine2": "Worthing, West Sussex",
+    "postcode": "BN11 1LZ",
+    "postalAddress": "Factory Outlets Ltd, 42 Guildbourne Centre, Worthing, West Sussex, BN11 1LZ",
+    "mapLink": "https://goo.gl/maps/fAoYq4WfVW92"
+  },
+  "hours": {
+    "monday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "tuesday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "wednesday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "thursday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "friday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "saturday": {
+      "open": "08:00",
+      "close": "18:00",
+      "closed": false
+    },
+    "sunday": {
+      "open": "09:30",
+      "close": "16:00",
+      "closed": false
+    }
+  },
+  "hoursDisplay": [
+    {
+      "label": "Monday – Saturday",
+      "value": "8:00am – 6:00pm"
+    },
+    {
+      "label": "Sunday",
+      "value": "9:30am – 4:00pm"
+    },
+    {
+      "label": "Bank Holiday Mondays",
+      "value": "10:00am – 4:00pm"
+    }
+  ],
+  "hoursNote": "Closed Christmas Day, Boxing Day, New Year's Day and Easter Sunday.",
+  "socials": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/guildbournectr/"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://www.twitter.com/GuildbourneCtr/"
+    }
+  ],
+  "announcement": {
+    "enabled": true,
+    "text": "Open seven days a week in the heart of Worthing",
+    "link": "/contact",
+    "linkLabel": "Plan your visit"
+  },
+  "newsletter": {
+    "endpoint": ""
+  }
+}

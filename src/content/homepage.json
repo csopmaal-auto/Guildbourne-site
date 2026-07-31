@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "eyebrow": "Worthing · West Sussex",
+    "headline": "The heart of Worthing, under one roof.",
+    "subheadline": "Independent retailers, family favourites and everyday essentials — Worthing's only indoor shopping centre, open seven days a week.",
+    "mediaType": "image",
+    "image": "/images/centre/exterior.jpg",
+    "videoUrl": "",
+    "poster": "",
+    "primaryCta": { "label": "Explore the stores", "href": "/stores" },
+    "secondaryCta": { "label": "Plan your visit", "href": "/contact" },
+    "scrollLabel": "Scroll"
+  },
+  "intro": {
+    "eyebrow": "Welcome",
+    "heading": "A different pace of shopping",
+    "body": [
+      "The Guildbourne Centre is where Worthing comes to browse, meet and unwind. From handmade chocolate and silver jewellery to escape rooms and a science-backed fitness studio, our stores are run by people who know their craft — and know their customers.",
+      "Step inside and take your time. Everything is under one roof, minutes from the seafront, with the whole of Worthing town centre on the doorstep."
+    ],
+    "image": "/images/centre/exterior.jpg",
+    "stats": [
+      { "value": "20+", "label": "Stores & services" },
+      { "value": "7", "label": "Days a week" },
+      { "value": "1", "label": "Roof — fully indoor" }
+    ]
+  },
+  "storesSection": {
+    "eyebrow": "The directory",
+    "heading": "Independents & favourites",
+    "intro": "A hand-picked mix of independent specialists and trusted names — this is shopping with personality.",
+    "ctaLabel": "View all stores"
+  },
+  "featuredStores": [
+    "toy-barnhaus",
+    "charlenes-chocolate-factory",
+    "fit-lab",
+    "mindworks-escape-rooms",
+    "contrast-clothing",
+    "sewsilver"
+  ],
+  "offersSection": {
+    "eyebrow": "Worth knowing",
+    "heading": "Latest offers",
+    "intro": "Promotions, perks and store highlights from around the centre.",
+    "ctaLabel": "All offers"
+  },
+  "eventsSection": {
+    "eyebrow": "What's on",
+    "heading": "Upcoming at the Guildbourne",
+    "intro": "Markets, workshops and seasonal moments — there's always something happening under our roof.",
+    "ctaLabel": "All events"
+  },
+  "newsSection": {
+    "eyebrow": "The journal",
+    "heading": "News & stories",
+    "intro": "What's new at the centre, and the people behind the counters.",
+    "ctaLabel": "All news"
+  },
+  "facilitiesSection": {
+    "eyebrow": "Made easy",
+    "heading": "Everything you need for a good visit",
+    "intro": "The practical details, taken care of."
+  },
+  "visit": {
+    "eyebrow": "Plan your visit",
+    "heading": "In the heart of Worthing",
+    "body": "You'll find us in the centre of town, a short stroll from the seafront and moments from Worthing's main shopping streets. Town-centre car parks and bus stops are a few minutes' walk away.",
+    "image": "/images/centre/exterior.jpg"
+  },
+  "social": {
+    "heading": "Follow the Guildbourne",
+    "intro": "Centre news, store highlights and what's on — as it happens.",
+    "handle": "@guildbournectr",
+    "images": []
+  },
+  "newsletter": {
+    "heading": "Stay in the loop",
+    "body": "Offers, events and centre news — straight to your inbox, about once a month.",
+    "disclaimer": "No spam, ever. Unsubscribe any time."
+  }
+}
