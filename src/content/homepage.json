@@ -8,13 +8,13 @@
         "cta": { "label": "Explore the stores", "href": "/stores" }
       },
       {
-        "image": "/images/centre/exterior.jpg",
+        "image": "/images/placeholders/hero-shopping.jpg",
         "headline": "20+ stores & services",
         "subheadline": "Independent specialists and trusted names, minutes from the seafront.",
         "cta": { "label": "Browse the directory", "href": "/stores" }
       },
       {
-        "image": "/images/centre/exterior.jpg",
+        "image": "/images/placeholders/hero-family.jpg",
         "headline": "Make a day of it",
         "subheadline": "Escape rooms, handmade chocolate, a family butcher and more.",
         "cta": { "label": "Plan your visit", "href": "/contact" }
