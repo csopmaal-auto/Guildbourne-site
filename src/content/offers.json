@@ -9,8 +9,11 @@
     "body": [
       "Toy Barnhaus price matches, so you can buy from an independent with confidence. See in store for details — and remember you can ring ahead to reserve any toy."
     ],
-    "image": "",
-    "cta": { "label": "Visit Toy Barnhaus", "href": "/stores/toy-barnhaus" }
+    "image": "/images/placeholders/offer-toys.jpg",
+    "cta": {
+      "label": "Visit Toy Barnhaus",
+      "href": "/stores/toy-barnhaus"
+    }
   },
   {
     "slug": "formula-fragrances-bespoke-scents",
@@ -22,8 +25,11 @@
     "body": [
       "Formula Fragrances crafts clean, preservative-free fragrance in small batches — including bespoke scents and refills. Call in to talk through what you're after."
     ],
-    "image": "",
-    "cta": { "label": "Visit Formula Fragrances", "href": "/stores/formula-fragrances" }
+    "image": "/images/placeholders/offer-fragrance.jpg",
+    "cta": {
+      "label": "Visit Formula Fragrances",
+      "href": "/stores/formula-fragrances"
+    }
   },
   {
     "slug": "mindworks-group-escapes",
@@ -35,8 +41,11 @@
     "body": [
       "Mindworks Escape Rooms hosts groups for birthdays, corporate days and get-togethers. Book your slot on their website and turn up ready to puzzle."
     ],
-    "image": "",
-    "cta": { "label": "Visit Mindworks", "href": "/stores/mindworks-escape-rooms" }
+    "image": "/images/placeholders/offer-escape.jpg",
+    "cta": {
+      "label": "Visit Mindworks",
+      "href": "/stores/mindworks-escape-rooms"
+    }
   },
   {
     "slug": "summer-at-the-guildbourne",
@@ -49,6 +58,9 @@
       "Summer is in full swing at the centre — with the Makers Market on 15 August, seven-day opening and the seafront a short stroll away. *This is a sample seasonal highlight — edit or replace it from the admin area.*"
     ],
     "image": "/images/centre/exterior.jpg",
-    "cta": { "label": "See what's on", "href": "/events" }
+    "cta": {
+      "label": "See what's on",
+      "href": "/events"
+    }
   }
 ]

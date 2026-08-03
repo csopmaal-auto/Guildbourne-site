@@ -41,13 +41,13 @@
       "pattern": true
     },
     {
-      "type": "color",
+      "type": "image",
       "title": "Events",
       "subtitle": "Markets, workshops and seasonal moments",
       "href": "/events",
-      "image": "",
+      "image": "/images/placeholders/tile-events.jpg",
       "palette": "red",
-      "pattern": true
+      "pattern": false
     },
     {
       "type": "image",
@@ -68,31 +68,31 @@
       "pattern": true
     },
     {
-      "type": "color",
+      "type": "image",
       "title": "Opening hours",
       "subtitle": "Open seven days a week — come visit us",
       "href": "/contact",
-      "image": "",
+      "image": "/images/placeholders/tile-hours.jpg",
       "palette": "sand",
-      "pattern": true
+      "pattern": false
     },
     {
-      "type": "color",
+      "type": "image",
       "title": "How to get to us",
       "subtitle": "By bus, train, car, bike or foot",
       "href": "/contact#getting-here",
-      "image": "",
+      "image": "/images/placeholders/tile-travel.jpg",
       "palette": "green",
-      "pattern": true
+      "pattern": false
     },
     {
-      "type": "color",
+      "type": "image",
       "title": "Good to know",
       "subtitle": "Facilities, venue hire and the practical details",
       "href": "/contact#facilities",
-      "image": "",
+      "image": "/images/placeholders/tile-know.jpg",
       "palette": "red",
-      "pattern": true
+      "pattern": false
     },
     {
       "type": "color",

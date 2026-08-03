@@ -49,10 +49,10 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             ) : (
               <div className="absolute inset-0 bg-sand" />
             )}
-            {/* Bottom gradient for caption legibility */}
+            {/* Scrims: soft top (wordmark legibility) + bottom (caption legibility) */}
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/70 lg:rounded-b-xxl"
+              className="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/70 lg:rounded-b-xxl"
             />
             <div
               className={cn(

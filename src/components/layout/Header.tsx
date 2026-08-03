@@ -73,16 +73,28 @@ export function Header({
                 href="/"
                 aria-label={`${settings.siteName} — home`}
                 className={cn(
-                  "focus-brand block w-fit",
-                  isHome
-                    ? "rounded-[20px] bg-white/95 px-4 py-2.5 shadow-sm lg:ml-12"
-                    : "rounded-md lg:ml-2",
+                  "focus-brand block w-fit rounded-md",
+                  isHome ? "lg:ml-12" : "lg:ml-2",
                 )}
               >
-                <span className="font-title block text-[1.5rem] leading-none font-extrabold tracking-tight text-ink">
+                <span
+                  className={cn(
+                    "font-title block text-[1.6rem] leading-none font-extrabold tracking-tight",
+                    isHome
+                      ? "text-white [text-shadow:0_1px_12px_rgba(28,27,24,0.45)]"
+                      : "text-ink",
+                  )}
+                >
                   Guildbourne
                 </span>
-                <span className="font-title mt-0.5 block text-[0.75rem] leading-none font-semibold text-ink-soft">
+                <span
+                  className={cn(
+                    "font-title mt-0.5 block text-[0.78rem] leading-none font-semibold",
+                    isHome
+                      ? "text-yellow [text-shadow:0_1px_8px_rgba(28,27,24,0.55)]"
+                      : "text-ink-soft",
+                  )}
+                >
                   Centre · Worthing
                 </span>
               </Link>
@@ -113,9 +125,9 @@ export function Header({
         type="button"
         aria-label="Search the site"
         onClick={() => setSearchOpen(true)}
-        className="focus-brand fixed top-[6.5rem] right-5 z-[55] grid size-12 place-items-center rounded-full bg-sand text-ink-soft transition-all duration-200 hover:bg-cream hover:text-ink sm:right-7 lg:right-11"
+        className="focus-brand fixed top-[6.5rem] right-5 z-[55] grid size-12 place-items-center rounded-full bg-sand text-ink-soft transition-all duration-200 hover:bg-cream hover:text-ink sm:right-7 lg:top-28 lg:right-[3.25rem] lg:size-10"
       >
-        <Search className="size-5" aria-hidden />
+        <Search className="size-[1.15rem]" aria-hidden />
       </button>
 
       <MenuSheet

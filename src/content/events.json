@@ -12,7 +12,7 @@
       "Entry is free and the market runs right through the centre, so you can browse the stalls and the stores in one easy loop.",
       "*This is a sample event created with the new website — edit or replace it from the admin area.*"
     ],
-    "image": "",
+    "image": "/images/placeholders/event-market.jpg",
     "featured": true
   },
   {
@@ -28,7 +28,7 @@
       "Sessions are drop-in, no booking needed. Children must be accompanied by an adult.",
       "*This is a sample event created with the new website — edit or replace it from the admin area.*"
     ],
-    "image": "",
+    "image": "/images/placeholders/event-crafts.jpg",
     "featured": false
   },
   {
@@ -43,7 +43,7 @@
       "Join us as the centre's festive lights go on for the season, with late browsing at participating stores and a few sweet surprises for the little ones.",
       "*This is a sample event created with the new website — edit or replace it from the admin area.*"
     ],
-    "image": "",
+    "image": "/images/placeholders/event-christmas.jpg",
     "featured": false
   },
   {
@@ -58,7 +58,7 @@
       "Local charities and community groups took over the mall for a day of stalls, tombolas and fundraising — with our own Brent Lodge shop flying the flag for the wildlife hospital.",
       "*This is a sample event created with the new website — edit or replace it from the admin area.*"
     ],
-    "image": "",
+    "image": "/images/placeholders/event-charity.jpg",
     "featured": false
   }
 ]
