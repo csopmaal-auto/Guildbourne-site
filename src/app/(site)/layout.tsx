@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import type { SearchItem } from "@/components/layout/SearchOverlay";
@@ -62,10 +61,9 @@ export default function SiteLayout({
       />
       <main id="content">{children}</main>
       <Footer />
-      <Script
-        id="ld-shopping-centre"
+      {/* Plain script tag so the JSON-LD is present in the server-rendered HTML */}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: jsonLdString(shoppingCentreJsonLd()) }}
       />
     </LenisProvider>

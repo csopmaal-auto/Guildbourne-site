@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { ArrowLeft, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OpenNowBadge } from "@/components/ui/open-now";
@@ -311,16 +310,12 @@ export default async function StorePage({ params }: Params) {
         </section>
       ) : null}
 
-      <Script
-        id={`ld-store-${store.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
-      <Script
-        id={`ld-breadcrumb-${store.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: jsonLdString(
             breadcrumbJsonLd([

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { ArrowLeft, CalendarDays, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CoverImage } from "@/components/ui/media";
@@ -158,16 +157,12 @@ export default async function EventPage({ params }: Params) {
         </section>
       ) : null}
 
-      <Script
-        id={`ld-event-${event.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
-      <Script
-        id={`ld-breadcrumb-event-${event.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: jsonLdString(
             breadcrumbJsonLd([

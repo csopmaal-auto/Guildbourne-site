@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { ArrowLeft } from "lucide-react";
 import { CoverImage } from "@/components/ui/media";
 import { Prose } from "@/components/ui/prose";
@@ -124,16 +123,12 @@ export default async function NewsArticlePage({ params }: Params) {
         </section>
       ) : null}
 
-      <Script
-        id={`ld-article-${article.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
-      <Script
-        id={`ld-breadcrumb-article-${article.slug}`}
+      <script
         type="application/ld+json"
-        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: jsonLdString(
             breadcrumbJsonLd([
