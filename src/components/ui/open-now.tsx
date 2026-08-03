@@ -12,10 +12,10 @@ import type { WeekHours } from "@/types/content";
 
 export function OpenNowBadge({
   hours,
-  tone = "light",
   className,
 }: {
   hours: WeekHours;
+  /** Kept for call-site compatibility; the pill styles itself for any surface. */
   tone?: "light" | "dark";
   className?: string;
 }) {
@@ -31,20 +31,19 @@ export function OpenNowBadge({
   if (!state) {
     return (
       <span
-        className={cn("inline-block h-6 w-32 animate-pulse rounded-full bg-current opacity-10", className)}
+        className={cn(
+          "inline-block h-8 w-36 animate-pulse rounded-full bg-sand",
+          className,
+        )}
         aria-hidden
       />
     );
   }
 
-  const dark = tone === "dark";
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.14em] uppercase",
-        dark
-          ? "border-ivory/20 text-ivory/85"
-          : "border-charcoal/15 text-charcoal/80",
+        "inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs leading-none font-bold text-ink",
         className,
       )}
     >

@@ -19,13 +19,13 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
-        /* Brand variants for the public site */
-        gold: "bg-gold text-charcoal shadow-[0_1px_0_rgba(0,0,0,0.06)] hover:bg-gold-soft hover:shadow-lg",
+        /* Brand variants for the public site (yellow pill system) */
+        gold: "rounded-full bg-yellow font-bold text-ink hover:bg-yellow-dark",
         "outline-light":
-          "border-ivory/35 text-ivory hover:border-gold hover:bg-ivory/5 hover:text-gold",
+          "rounded-full border-2 border-white/80 font-bold text-white hover:bg-white hover:text-ink",
         "outline-dark":
-          "border-charcoal/25 text-charcoal hover:border-bronze hover:bg-charcoal/[0.03] hover:text-bronze",
-        charcoal: "bg-charcoal text-ivory hover:bg-charcoal-soft",
+          "rounded-full border-2 border-ink/30 font-bold text-ink hover:border-ink hover:bg-ink hover:text-white",
+        charcoal: "rounded-full bg-ink font-bold text-white hover:bg-ink/85",
       },
       size: {
         default:
@@ -39,8 +39,8 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
-        /* Hero / section CTA size */
-        xl: "h-12 gap-2 rounded-none px-7 text-[11px] font-semibold uppercase tracking-[0.22em]",
+        /* Reference CTA size: rounded-full px-6 py-3.5, sentence case */
+        xl: "h-auto gap-2 rounded-full px-6 py-3.5 text-sm leading-none",
       },
     },
     defaultVariants: {

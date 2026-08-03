@@ -58,14 +58,14 @@ export function ContactForm({ form }: { form: ContactContent["form"] }) {
   if (state === "done") {
     return (
       <div
-        className="flex h-full min-h-72 flex-col items-center justify-center border border-gold/40 bg-gold-soft/20 p-10 text-center"
+        className="flex h-full min-h-72 flex-col items-center justify-center rounded-xl bg-white p-10 text-center"
         role="status"
       >
-        <span className="inline-flex size-12 items-center justify-center rounded-full bg-gold text-charcoal">
+        <span className="inline-flex size-12 items-center justify-center rounded-full bg-yellow text-ink">
           <Check className="size-5" aria-hidden />
         </span>
-        <h3 className="heading-3 mt-5">{form.successHeading}</h3>
-        <p className="mt-2 max-w-sm text-sm text-muted-foreground">
+        <h3 className="heading-m mt-5 text-ink">{form.successHeading}</h3>
+        <p className="text-body mt-2 max-w-sm text-ink-soft">
           {form.successBody}
         </p>
       </div>
@@ -143,7 +143,7 @@ export function ContactForm({ form }: { form: ContactContent["form"] }) {
         </p>
       ) : null}
 
-      <Button type="submit" variant="charcoal" size="xl" disabled={isSubmitting}>
+      <Button type="submit" variant="gold" size="xl" disabled={isSubmitting}>
         {isSubmitting ? (
           <Loader2 className="size-4 animate-spin" aria-hidden />
         ) : (
@@ -170,7 +170,7 @@ function FormField({
     <div className="space-y-1.5">
       <Label className={cn("text-[13px] font-semibold", error && "text-destructive")}>
         {label}
-        {required ? <span className="ml-0.5 text-bronze">*</span> : null}
+        {required ? <span className="ml-0.5 text-ink-soft">*</span> : null}
       </Label>
       {children}
       {error ? (

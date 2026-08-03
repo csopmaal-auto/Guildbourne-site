@@ -12,14 +12,14 @@ export default function OffersPage() {
   return (
     <>
       <PageHeader content={pages.offers} />
-      <div className="bg-ivory py-16 sm:py-20">
+      <div className="bg-white pb-16">
         <div className="container-site">
           {offers.length === 0 ? (
-            <p className="py-16 text-center text-muted-foreground">
+            <p className="text-body rounded-xl bg-cream py-16 text-center text-ink-soft">
               No offers right now — check back soon.
             </p>
           ) : (
-            <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {offers.map((offer, i) => (
                 <RevealItem
                   key={offer.slug}

@@ -11,7 +11,7 @@ export default function NewsPage() {
   return (
     <>
       <PageHeader content={pages.news} />
-      <div className="bg-ivory">
+      <div className="bg-white">
         <NewsExplorer articles={newsByDate} />
       </div>
     </>

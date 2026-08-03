@@ -34,7 +34,7 @@ export function EventsExplorer({
   ];
 
   return (
-    <div className="container-site py-14 sm:py-16">
+    <div className="container-site pb-16">
       <div
         role="group"
         aria-label="Filter events"
@@ -47,24 +47,22 @@ export function EventsExplorer({
             aria-pressed={filter === tab.key}
             onClick={() => setFilter(tab.key)}
             className={cn(
-              "rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wide transition-all focus-gold",
+              "focus-brand rounded-full px-4 py-2 text-xs leading-none font-bold transition-colors",
               filter === tab.key
-                ? "border-charcoal bg-charcoal text-ivory"
-                : "border-charcoal/20 text-charcoal/70 hover:border-charcoal/50 hover:text-charcoal",
+                ? "bg-yellow text-ink"
+                : "bg-cream text-ink hover:bg-sand",
             )}
           >
             {tab.label}
-            <span className={cn("ml-1.5", filter === tab.key ? "text-gold" : "text-muted-foreground")}>
-              {tab.count}
-            </span>
+            <span className="ml-1.5 text-ink-soft">{tab.count}</span>
           </button>
         ))}
       </div>
 
       {visible.length === 0 ? (
-        <div className="border border-dashed border-charcoal/20 px-6 py-20 text-center">
-          <p className="text-lg font-bold text-charcoal">Nothing here yet</p>
-          <p className="mt-2 text-sm text-muted-foreground">
+        <div className="rounded-xl bg-cream px-6 py-20 text-center">
+          <p className="heading-m text-ink">Nothing here yet</p>
+          <p className="text-body mt-2 text-ink-soft">
             New events are added regularly — check back soon.
           </p>
         </div>

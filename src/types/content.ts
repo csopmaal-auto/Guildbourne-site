@@ -72,51 +72,30 @@ export type Navigation = {
   legal: NavLink[];
 };
 
-export type SectionHeading = {
-  eyebrow: string;
-  heading: string;
-  intro?: string;
-  ctaLabel?: string;
+export type HeroSlide = {
+  image: string;
+  headline: string;
+  subheadline: string;
+  cta: Cta;
+};
+
+export type TilePalette = "yellow" | "red" | "blue" | "green" | "sand";
+
+export type HomeTile = {
+  type: "image" | "color";
+  title: string;
+  subtitle: string;
+  href: string;
+  image: string;
+  palette: TilePalette;
+  pattern: boolean;
 };
 
 export type Homepage = {
   hero: {
-    eyebrow: string;
-    headline: string;
-    subheadline: string;
-    mediaType: "image" | "video";
-    image: string;
-    videoUrl: string;
-    poster: string;
-    primaryCta: Cta;
-    secondaryCta: Cta;
-    scrollLabel: string;
+    slides: HeroSlide[];
   };
-  intro: {
-    eyebrow: string;
-    heading: string;
-    body: string[];
-    image: string;
-    stats: { value: string; label: string }[];
-  };
-  storesSection: SectionHeading;
-  featuredStores: string[];
-  offersSection: SectionHeading;
-  eventsSection: SectionHeading;
-  newsSection: SectionHeading;
-  facilitiesSection: SectionHeading;
-  visit: {
-    eyebrow: string;
-    heading: string;
-    body: string;
-    image: string;
-  };
-  social: {
-    heading: string;
-    intro: string;
-    handle: string;
-    images: string[];
-  };
+  tiles: HomeTile[];
   newsletter: {
     heading: string;
     body: string;

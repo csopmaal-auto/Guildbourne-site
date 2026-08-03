@@ -3,13 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import {
-  ArrowLeft,
-  ExternalLink,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowLeft, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OpenNowBadge } from "@/components/ui/open-now";
 import { Prose } from "@/components/ui/prose";
@@ -79,22 +73,22 @@ export default async function StorePage({ params }: Params) {
   };
 
   return (
-    <article>
-      {/* Hero band */}
-      <header className="bg-charcoal bg-grain pt-32 pb-12 text-ivory sm:pt-40 sm:pb-16">
-        <div className="container-site">
-          <Reveal>
-            <nav aria-label="Breadcrumb">
-              <Link
-                href="/stores"
-                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.22em] text-ivory/60 uppercase transition-colors hover:text-gold focus-gold"
-              >
-                <ArrowLeft className="size-3.5" aria-hidden /> Store directory
-              </Link>
-            </nav>
+    <article className="bg-white">
+      {/* Hero panel */}
+      <header className="container-site pt-32 sm:pt-36">
+        <Reveal>
+          <nav aria-label="Breadcrumb">
+            <Link
+              href="/stores"
+              className="focus-brand inline-flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-xs leading-none font-bold text-ink transition-colors hover:bg-sand"
+            >
+              <ArrowLeft className="size-3.5" aria-hidden /> Store directory
+            </Link>
+          </nav>
 
-            <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-center">
-              <div className="flex h-32 w-44 shrink-0 items-center justify-center bg-white px-6 shadow-xl">
+          <div className="mt-6 overflow-hidden rounded-xxl bg-cream p-6 sm:p-10">
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
+              <div className="flex h-32 w-44 shrink-0 items-center justify-center rounded-xl bg-white px-6">
                 {store.logo ? (
                   <Image
                     src={store.logo}
@@ -105,22 +99,24 @@ export default async function StorePage({ params }: Params) {
                     className="max-h-20 w-auto object-contain"
                   />
                 ) : (
-                  <span className="text-xl font-extrabold text-charcoal/30">
+                  <span className="font-title text-xl font-extrabold text-ink/30">
                     {store.name}
                   </span>
                 )}
               </div>
               <div>
-                <p className="eyebrow-light">{store.category}</p>
-                <h1 className="heading-1 mt-2">{store.name}</h1>
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-ivory/70">
+                <p className="text-sm font-bold text-ink-soft">{store.category}</p>
+                <h1 className="heading-xl mt-1 text-ink lg:text-[2.75rem] lg:leading-[1.09]">
+                  {store.name}
+                </h1>
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-ink-soft">
                   {store.unit ? (
-                    <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="size-3.5 text-gold" aria-hidden />
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-xs leading-none font-bold text-ink">
+                      <MapPin className="size-3.5" aria-hidden />
                       Unit {store.unit}
                     </span>
                   ) : null}
-                  <OpenNowBadge hours={settings.hours} tone="dark" />
+                  <OpenNowBadge hours={settings.hours} />
                 </div>
               </div>
             </div>
@@ -134,185 +130,180 @@ export default async function StorePage({ params }: Params) {
                 </Button>
               ) : null}
               {store.website ? (
-                <Button asChild variant="outline-light" size="xl">
+                <Button asChild variant="outline-dark" size="xl">
                   <a href={store.website} target="_blank" rel="noopener noreferrer">
                     Visit website <ExternalLink className="size-3.5" />
                   </a>
                 </Button>
               ) : null}
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </header>
 
       {/* Body */}
-      <div className="bg-ivory py-16 sm:py-20">
-        <div className="container-site grid gap-14 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <Reveal>
-              <h2 className="eyebrow">About</h2>
-              <span className="hairline-gold mt-4 mb-7 block" aria-hidden />
+      <div className="container-site grid gap-10 py-12 lg:grid-cols-3 sm:py-16">
+        <div className="lg:col-span-2">
+          <Reveal>
+            <h2 className="heading-l text-ink">About {store.name}</h2>
+            <div className="mt-5">
               {store.description.length ? (
                 <Prose paragraphs={store.description} />
               ) : (
-                <p className="text-muted-foreground">{store.excerpt}</p>
+                <p className="text-ink-soft">{store.excerpt}</p>
               )}
+            </div>
+          </Reveal>
+
+          {store.image ? (
+            <Reveal className="mt-10">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                <Image
+                  src={store.image}
+                  alt={store.name}
+                  fill
+                  sizes="(min-width:1024px) 60vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
+          ) : null}
 
-            {store.image ? (
-              <Reveal className="mt-10">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={store.image}
-                    alt={store.name}
-                    fill
-                    sizes="(min-width:1024px) 60vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              </Reveal>
-            ) : null}
+          {offers.length ? (
+            <Reveal className="mt-12">
+              <h2 className="heading-l text-ink">Offers & highlights</h2>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                {offers.map((offer) => (
+                  <OfferCard key={offer.slug} offer={offer} />
+                ))}
+              </div>
+            </Reveal>
+          ) : null}
+        </div>
 
-            {offers.length ? (
-              <Reveal className="mt-14">
-                <h2 className="eyebrow">Offers & highlights</h2>
-                <span className="hairline-gold mt-4 mb-7 block" aria-hidden />
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {offers.map((offer) => (
-                    <OfferCard key={offer.slug} offer={offer} />
+        {/* Details sidebar */}
+        <Reveal delay={0.1}>
+          <aside className="rounded-xl bg-cream p-6 lg:sticky lg:top-6">
+            <h2 className="heading-m text-ink">Store details</h2>
+
+            <dl className="text-body mt-5 space-y-5">
+              <div>
+                <dt className="text-xs font-bold text-ink-soft uppercase">
+                  Opening hours
+                </dt>
+                <dd className="mt-2 space-y-1.5 text-ink">
+                  {settings.hoursDisplay.map((row) => (
+                    <p key={row.label} className="flex justify-between gap-4">
+                      <span className="text-ink-soft">{row.label}</span>
+                      <span className="font-bold">{row.value}</span>
+                    </p>
                   ))}
-                </div>
-              </Reveal>
-            ) : null}
-          </div>
+                  {store.hoursNote ? (
+                    <p className="pt-1 text-xs text-ink-soft italic">
+                      {store.hoursNote}
+                    </p>
+                  ) : null}
+                </dd>
+              </div>
 
-          {/* Details sidebar */}
-          <Reveal delay={0.1}>
-            <aside className="border border-charcoal/10 bg-white p-7 lg:sticky lg:top-28">
-              <h2 className="text-sm font-bold tracking-[0.2em] text-charcoal uppercase">
-                Store details
-              </h2>
-
-              <dl className="mt-6 space-y-5 text-sm">
+              {store.phone ? (
                 <div>
-                  <dt className="eyebrow text-[10px]">Opening hours</dt>
-                  <dd className="mt-2 space-y-1.5 text-charcoal/80">
-                    {settings.hoursDisplay.map((row) => (
-                      <p key={row.label} className="flex justify-between gap-4">
-                        <span className="text-muted-foreground">{row.label}</span>
-                        <span className="font-semibold">{row.value}</span>
-                      </p>
-                    ))}
-                    {store.hoursNote ? (
-                      <p className="pt-1 text-xs text-muted-foreground italic">
-                        {store.hoursNote}
-                      </p>
-                    ) : null}
-                  </dd>
-                </div>
-
-                {store.phone ? (
-                  <div>
-                    <dt className="eyebrow text-[10px]">Phone</dt>
-                    <dd className="mt-1.5">
-                      <a
-                        href={phoneHref!}
-                        className="link-underline inline-flex items-center gap-2 font-semibold text-charcoal focus-gold"
-                      >
-                        <Phone className="size-3.5 text-bronze" aria-hidden />
-                        {store.phone}
-                      </a>
-                    </dd>
-                  </div>
-                ) : null}
-
-                {store.email ? (
-                  <div>
-                    <dt className="eyebrow text-[10px]">Email</dt>
-                    <dd className="mt-1.5">
-                      <a
-                        href={`mailto:${store.email}`}
-                        className="link-underline inline-flex items-center gap-2 font-semibold break-all text-charcoal focus-gold"
-                      >
-                        <Mail className="size-3.5 shrink-0 text-bronze" aria-hidden />
-                        {store.email}
-                      </a>
-                    </dd>
-                  </div>
-                ) : null}
-
-                {store.website ? (
-                  <div>
-                    <dt className="eyebrow text-[10px]">Website</dt>
-                    <dd className="mt-1.5">
-                      <a
-                        href={store.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link-underline inline-flex items-center gap-2 font-semibold break-all text-charcoal focus-gold"
-                      >
-                        <ExternalLink className="size-3.5 shrink-0 text-bronze" aria-hidden />
-                        {store.website.replace(/^https?:\/\/(www\.)?/, "")}
-                      </a>
-                    </dd>
-                  </div>
-                ) : null}
-
-                <div>
-                  <dt className="eyebrow text-[10px]">Location</dt>
-                  <dd className="mt-1.5 text-charcoal/80">
-                    {store.unit ? `Unit ${store.unit}, ` : ""}
-                    {settings.contact.addressLine1}
-                    <Link
-                      href="/contact#floorplan"
-                      className="link-underline mt-1.5 block w-fit text-xs font-semibold tracking-wider text-bronze uppercase focus-gold"
+                  <dt className="text-xs font-bold text-ink-soft uppercase">Phone</dt>
+                  <dd className="mt-1.5">
+                    <a
+                      href={phoneHref!}
+                      className="focus-brand inline-flex items-center gap-2 rounded-sm font-bold text-ink hover:underline"
                     >
-                      View on the centre plan
-                    </Link>
+                      <Phone className="size-3.5 text-ink-soft" aria-hidden />
+                      {store.phone}
+                    </a>
                   </dd>
-                </div>
-              </dl>
-
-              {store.socials.length ? (
-                <div className="mt-7 border-t border-charcoal/10 pt-6">
-                  <p className="eyebrow text-[10px]">Follow</p>
-                  <div className="mt-3 flex gap-2.5">
-                    {store.socials.map((s) => (
-                      <SocialIconLink
-                        key={s.platform + s.url}
-                        platform={s.platform}
-                        url={s.url}
-                        className="border-charcoal/15 text-charcoal/70 hover:border-gold hover:bg-gold hover:text-charcoal"
-                      />
-                    ))}
-                  </div>
                 </div>
               ) : null}
-            </aside>
-          </Reveal>
-        </div>
+
+              {store.email ? (
+                <div>
+                  <dt className="text-xs font-bold text-ink-soft uppercase">Email</dt>
+                  <dd className="mt-1.5">
+                    <a
+                      href={`mailto:${store.email}`}
+                      className="focus-brand inline-flex items-center gap-2 rounded-sm font-bold break-all text-ink hover:underline"
+                    >
+                      <Mail className="size-3.5 shrink-0 text-ink-soft" aria-hidden />
+                      {store.email}
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
+
+              {store.website ? (
+                <div>
+                  <dt className="text-xs font-bold text-ink-soft uppercase">Website</dt>
+                  <dd className="mt-1.5">
+                    <a
+                      href={store.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="focus-brand inline-flex items-center gap-2 rounded-sm font-bold break-all text-ink hover:underline"
+                    >
+                      <ExternalLink className="size-3.5 shrink-0 text-ink-soft" aria-hidden />
+                      {store.website.replace(/^https?:\/\/(www\.)?/, "")}
+                    </a>
+                  </dd>
+                </div>
+              ) : null}
+
+              <div>
+                <dt className="text-xs font-bold text-ink-soft uppercase">Location</dt>
+                <dd className="mt-1.5 text-ink">
+                  {store.unit ? `Unit ${store.unit}, ` : ""}
+                  {settings.contact.addressLine1}
+                  <Link
+                    href="/contact#floorplan"
+                    className="focus-brand mt-1.5 block w-fit rounded-sm text-sm font-bold text-ink underline underline-offset-4 hover:text-ink-soft"
+                  >
+                    View on the centre plan
+                  </Link>
+                </dd>
+              </div>
+            </dl>
+
+            {store.socials.length ? (
+              <div className="mt-6 border-t border-sand pt-5">
+                <p className="text-xs font-bold text-ink-soft uppercase">Follow</p>
+                <div className="mt-3 flex gap-2.5">
+                  {store.socials.map((s) => (
+                    <SocialIconLink
+                      key={s.platform + s.url}
+                      platform={s.platform}
+                      url={s.url}
+                      className="border-sand bg-white text-ink-soft hover:border-yellow hover:bg-yellow hover:text-ink"
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </aside>
+        </Reveal>
       </div>
 
       {/* Related stores */}
       {related.length ? (
-        <section className="bg-stone py-16 sm:py-20">
+        <section className="bg-cream py-12 sm:py-16">
           <div className="container-site">
-            <Reveal className="mb-10 flex items-end justify-between gap-6">
-              <div>
-                <p className="eyebrow">Keep browsing</p>
-                <h2 className="heading-2 mt-3">You might also like</h2>
-              </div>
+            <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-4">
+              <h2 className="heading-l text-ink">You might also like</h2>
               <Link
                 href="/stores"
-                className="link-underline hidden pb-1 text-[11px] font-semibold tracking-[0.22em] text-bronze uppercase sm:block focus-gold"
+                className="focus-brand rounded-sm text-sm font-bold text-ink underline underline-offset-4 hover:text-ink-soft"
               >
                 All stores
               </Link>
             </Reveal>
-            <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((s) => (
                 <RevealItem key={s.slug}>
-                  <StoreCard store={s} className="h-full" />
+                  <StoreCard store={s} className="h-full bg-white hover:bg-sand" />
                 </RevealItem>
               ))}
             </RevealGroup>

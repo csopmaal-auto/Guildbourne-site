@@ -8,19 +8,15 @@ import { cn } from "@/lib/utils";
  */
 export function Prose({
   paragraphs,
-  tone = "light",
   className,
 }: {
   paragraphs: string[];
-  tone?: "light" | "dark";
   className?: string;
 }) {
-  const dark = tone === "dark";
   return (
     <div
       className={cn(
-        "space-y-5 text-[15px] leading-[1.85] sm:text-base",
-        dark ? "text-ivory/75" : "text-charcoal/75",
+        "space-y-5 text-[15px] leading-[1.8] text-ink sm:text-base",
         className,
       )}
     >
@@ -32,33 +28,13 @@ export function Prose({
             forceBlock: true,
             overrides: {
               a: { component: SafeLink },
-              h2: {
-                props: {
-                  className: cn(
-                    "heading-3 pt-4 first:pt-0",
-                    dark ? "text-ivory" : "text-charcoal",
-                  ),
-                },
-              },
-              h3: {
-                props: {
-                  className: cn(
-                    "pt-2 text-lg font-bold tracking-tight",
-                    dark ? "text-ivory" : "text-charcoal",
-                  ),
-                },
-              },
-              strong: {
-                props: {
-                  className: cn("font-bold", dark ? "text-ivory" : "text-charcoal"),
-                },
-              },
+              h2: { props: { className: "heading-l pt-4 text-ink first:pt-0" } },
+              h3: { props: { className: "heading-m pt-2 text-ink" } },
+              strong: { props: { className: "font-bold text-ink" } },
               ul: { props: { className: "list-disc space-y-1.5 pl-5" } },
               ol: { props: { className: "list-decimal space-y-1.5 pl-5" } },
               blockquote: {
-                props: {
-                  className: "border-l-2 border-gold pl-4 italic",
-                },
+                props: { className: "border-l-4 border-yellow pl-4 italic" },
               },
             },
           }}
@@ -76,7 +52,7 @@ function SafeLink({
   ...rest
 }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const className =
-    "font-semibold text-bronze underline decoration-gold/50 underline-offset-4 transition-colors hover:text-charcoal hover:decoration-gold";
+    "font-bold text-ink underline decoration-yellow decoration-2 underline-offset-4 transition-colors hover:text-ink-soft";
   const safe = /^(https?:\/\/|\/|#|mailto:|tel:)/i.test(href) ? href : "#";
   if (safe.startsWith("/") || safe.startsWith("#")) {
     return (

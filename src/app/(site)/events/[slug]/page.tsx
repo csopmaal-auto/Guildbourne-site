@@ -69,35 +69,37 @@ export default async function EventPage({ params }: Params) {
 
   return (
     <article>
-      <header className="bg-charcoal bg-grain pt-32 pb-12 text-ivory sm:pt-40 sm:pb-16">
+      <header className="bg-white pt-32 sm:pt-36">
         <div className="container-site">
           <Reveal>
             <nav aria-label="Breadcrumb">
               <Link
                 href="/events"
-                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.22em] text-ivory/60 uppercase transition-colors hover:text-gold focus-gold"
+                className="focus-brand inline-flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-xs leading-none font-bold text-ink transition-colors hover:bg-sand"
               >
                 <ArrowLeft className="size-3.5" aria-hidden /> What&rsquo;s on
               </Link>
             </nav>
-            <p className="eyebrow-light mt-8">
+            <p className="mt-8 text-sm font-bold text-ink-soft">
               {isUpcoming(event) ? "Upcoming event" : "Past event"}
             </p>
-            <h1 className="heading-1 mt-3 max-w-4xl">{event.title}</h1>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ivory/75">
-              <span className="inline-flex items-center gap-2">
-                <CalendarDays className="size-4 text-gold" aria-hidden />
+            <h1 className="heading-xl mt-2 max-w-4xl text-ink lg:text-[2.75rem] lg:leading-[1.09]">
+              {event.title}
+            </h1>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-2 rounded-full bg-cream px-3.5 py-1.5 text-xs leading-none font-bold text-ink">
+                <CalendarDays className="size-3.5" aria-hidden />
                 {formatDateRange(event.startDate, event.endDate)}
               </span>
               {event.timeLabel ? (
-                <span className="inline-flex items-center gap-2">
-                  <Clock className="size-4 text-gold" aria-hidden />
+                <span className="inline-flex items-center gap-2 rounded-full bg-cream px-3.5 py-1.5 text-xs leading-none font-bold text-ink">
+                  <Clock className="size-3.5" aria-hidden />
                   {event.timeLabel}
                 </span>
               ) : null}
               {event.location ? (
-                <span className="inline-flex items-center gap-2">
-                  <MapPin className="size-4 text-gold" aria-hidden />
+                <span className="inline-flex items-center gap-2 rounded-full bg-cream px-3.5 py-1.5 text-xs leading-none font-bold text-ink">
+                  <MapPin className="size-3.5" aria-hidden />
                   {event.location}
                 </span>
               ) : null}
@@ -106,7 +108,7 @@ export default async function EventPage({ params }: Params) {
         </div>
       </header>
 
-      <div className="bg-ivory py-16 sm:py-20">
+      <div className="bg-white py-10 sm:py-12">
         <div className="container-narrow">
           {event.image ? (
             <Reveal className="mb-10">
@@ -114,25 +116,25 @@ export default async function EventPage({ params }: Params) {
                 src={event.image}
                 alt={event.title}
                 sizes="(min-width:768px) 48rem, 100vw"
-                className="aspect-[16/9]"
+                className="aspect-[16/9] rounded-xl"
               />
             </Reveal>
           ) : null}
           <Reveal>
             <Prose paragraphs={event.body.length ? event.body : [event.excerpt]} />
           </Reveal>
-          <Reveal className="mt-12 border-t border-charcoal/10 pt-8">
-            <p className="text-sm text-muted-foreground">
+          <Reveal className="mt-12 border-t border-sand pt-8">
+            <p className="text-body text-ink-soft">
               Questions about this event? Call us on{" "}
               <a
                 href={`tel:${settings.contact.phone.replace(/\s/g, "")}`}
-                className="font-semibold text-bronze hover:underline"
+                className="font-bold text-ink hover:underline"
               >
                 {settings.contact.phone}
               </a>
               .
             </p>
-            <Button asChild variant="outline-dark" size="xl" className="mt-6">
+            <Button asChild variant="gold" size="xl" className="mt-6">
               <Link href="/contact">Plan your visit</Link>
             </Button>
           </Reveal>
@@ -140,13 +142,12 @@ export default async function EventPage({ params }: Params) {
       </div>
 
       {others.length ? (
-        <section className="bg-stone py-16 sm:py-20">
+        <section className="bg-cream py-12 sm:py-16">
           <div className="container-site">
-            <Reveal className="mb-10">
-              <p className="eyebrow">More to look forward to</p>
-              <h2 className="heading-2 mt-3">Coming up at the centre</h2>
+            <Reveal className="mb-8">
+              <h2 className="heading-l text-ink">Coming up at the centre</h2>
             </Reveal>
-            <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {others.map((e) => (
                 <RevealItem key={e.slug}>
                   <EventCard event={e} className="h-full" />

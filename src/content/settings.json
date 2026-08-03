@@ -74,7 +74,7 @@
     }
   ],
   "announcement": {
-    "enabled": true,
+    "enabled": false,
     "text": "Open seven days a week in the heart of Worthing",
     "link": "/contact",
     "linkLabel": "Plan your visit"

@@ -56,7 +56,7 @@ export function SocialIconLink({
       aria-label={label}
       title={label}
       className={cn(
-        "inline-flex size-9 items-center justify-center rounded-full border transition-colors focus-gold",
+        "focus-brand inline-flex size-9 items-center justify-center rounded-full border transition-colors",
         className,
       )}
     >

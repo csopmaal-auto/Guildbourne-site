@@ -21,7 +21,8 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { ContactForm } from "@/components/sections/contact/ContactForm";
 import { MapEmbed } from "@/components/sections/contact/MapEmbed";
-import { contact, settings } from "@/lib/content";
+import { FacilityCard } from "@/components/sections/FacilityCard";
+import { contact, facilities, settings } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata("/contact");
@@ -40,17 +41,17 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader content={contact.header}>
-        <Reveal delay={0.15} className="mt-8 flex flex-wrap items-center gap-3">
-          <OpenNowBadge hours={settings.hours} tone="dark" />
+        <Reveal delay={0.1} className="mt-6 flex flex-wrap items-center gap-2">
+          <OpenNowBadge hours={settings.hours} className="bg-cream" />
           <a
             href={phoneHref}
-            className="inline-flex items-center gap-2 rounded-full border border-ivory/20 px-4 py-1.5 text-sm text-ivory/85 transition-colors hover:border-gold hover:text-gold focus-gold"
+            className="focus-brand inline-flex items-center gap-2 rounded-full bg-cream px-4 py-2 text-xs leading-none font-bold text-ink transition-colors hover:bg-sand"
           >
             <Phone className="size-3.5" aria-hidden /> {settings.contact.phone}
           </a>
           <a
             href={`mailto:${settings.contact.email}`}
-            className="inline-flex items-center gap-2 rounded-full border border-ivory/20 px-4 py-1.5 text-sm text-ivory/85 transition-colors hover:border-gold hover:text-gold focus-gold"
+            className="focus-brand inline-flex items-center gap-2 rounded-full bg-cream px-4 py-2 text-xs leading-none font-bold text-ink transition-colors hover:bg-sand"
           >
             <Mail className="size-3.5" aria-hidden /> {settings.contact.email}
           </a>
@@ -58,24 +59,25 @@ export default function ContactPage() {
       </PageHeader>
 
       {/* Form + details */}
-      <section className="bg-ivory py-16 sm:py-20">
-        <div className="container-site grid gap-14 lg:grid-cols-5">
+      <section className="bg-white pb-14">
+        <div className="container-site grid gap-10 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
-            <p className="eyebrow">{contact.form.heading}</p>
-            <h2 className="heading-2 mt-3">Send us a message</h2>
-            {contact.form.intro ? (
-              <p className="lead mt-3">{contact.form.intro}</p>
-            ) : null}
-            <div className="relative mt-8">
-              <ContactForm form={contact.form} />
+            <div className="rounded-xxl bg-cream p-6 sm:p-8">
+              <h2 className="heading-l text-ink">{contact.form.heading}</h2>
+              {contact.form.intro ? (
+                <p className="text-body mt-2 text-ink-soft">{contact.form.intro}</p>
+              ) : null}
+              <div className="relative mt-6">
+                <ContactForm form={contact.form} />
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.1} className="lg:col-span-2">
-            <aside className="space-y-8 border border-charcoal/10 bg-white p-7">
+            <aside className="space-y-7 rounded-xxl bg-cream p-6 sm:p-8">
               <div>
-                <p className="eyebrow text-[10px]">Visit us</p>
-                <address className="mt-2.5 text-sm leading-relaxed text-charcoal/80 not-italic">
+                <h2 className="heading-xs text-ink uppercase">Visit us</h2>
+                <address className="text-body mt-2.5 text-ink-soft not-italic">
                   {settings.contact.addressLine1}
                   <br />
                   {settings.contact.addressLine2}
@@ -84,36 +86,34 @@ export default function ContactPage() {
                 </address>
               </div>
               <div>
-                <p className="eyebrow text-[10px]">Opening hours</p>
-                <dl className="mt-2.5 space-y-1.5 text-sm">
+                <h2 className="heading-xs text-ink uppercase">Opening hours</h2>
+                <dl className="text-body mt-2.5 space-y-1.5">
                   {settings.hoursDisplay.map((row) => (
                     <div key={row.label} className="flex justify-between gap-4">
-                      <dt className="text-muted-foreground">{row.label}</dt>
-                      <dd className="font-semibold text-charcoal">{row.value}</dd>
+                      <dt className="text-ink-soft">{row.label}</dt>
+                      <dd className="font-bold text-ink">{row.value}</dd>
                     </div>
                   ))}
                 </dl>
                 {settings.hoursNote ? (
-                  <p className="mt-2.5 text-xs text-muted-foreground">
-                    {settings.hoursNote}
-                  </p>
+                  <p className="mt-2.5 text-xs text-ink-soft">{settings.hoursNote}</p>
                 ) : null}
               </div>
               <div>
-                <p className="eyebrow text-[10px]">Post</p>
-                <p className="mt-2.5 text-sm leading-relaxed text-charcoal/80">
+                <h2 className="heading-xs text-ink uppercase">Post</h2>
+                <p className="text-body mt-2.5 text-ink-soft">
                   {settings.contact.postalAddress}
                 </p>
               </div>
-              <div className="border-t border-charcoal/10 pt-6">
-                <p className="eyebrow text-[10px]">Follow the centre</p>
+              <div className="border-t border-sand pt-5">
+                <h2 className="heading-xs text-ink uppercase">Follow the centre</h2>
                 <div className="mt-3 flex gap-2.5">
                   {settings.socials.map((s) => (
                     <SocialIconLink
                       key={s.platform + s.url}
                       platform={s.platform}
                       url={s.url}
-                      className="border-charcoal/15 text-charcoal/70 hover:border-gold hover:bg-gold hover:text-charcoal"
+                      className="border-sand bg-white text-ink-soft hover:border-yellow hover:bg-yellow hover:text-ink"
                     />
                   ))}
                 </div>
@@ -124,31 +124,31 @@ export default function ContactPage() {
       </section>
 
       {/* Getting here + map */}
-      <section id="getting-here" className="scroll-mt-24 bg-stone py-16 sm:py-20">
+      <section id="getting-here" className="scroll-mt-10 bg-cream py-12 sm:py-16">
         <div className="container-site">
-          <Reveal className="mb-10">
-            <p className="eyebrow">Getting here</p>
-            <h2 className="heading-2 mt-3">Easy to reach, however you travel</h2>
+          <Reveal className="mb-8">
+            <h2 className="heading-l text-ink">How to get to us</h2>
+            <p className="text-body mt-2 text-ink-soft">
+              By bus, train, car, bike or foot.
+            </p>
           </Reveal>
           <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {contact.gettingHere.map((item) => {
               const Icon = MODE_ICONS[item.mode] ?? Footprints;
               return (
                 <RevealItem key={item.mode}>
-                  <div className="h-full border border-charcoal/8 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_18px_40px_-18px_rgba(28,27,24,0.25)]">
-                    <span className="inline-flex size-11 items-center justify-center rounded-full bg-stone text-bronze">
+                  <div className="h-full rounded-xl bg-white p-6 transition-colors duration-200 hover:bg-sand">
+                    <span className="grid size-11 place-items-center rounded-full bg-yellow text-ink">
                       <Icon className="size-5" aria-hidden />
                     </span>
-                    <h3 className="mt-4 font-bold text-charcoal">{item.title}</h3>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
-                      {item.body}
-                    </p>
+                    <h3 className="heading-m mt-4 text-ink">{item.title}</h3>
+                    <p className="text-body mt-1.5 text-ink-soft">{item.body}</p>
                   </div>
                 </RevealItem>
               );
             })}
           </RevealGroup>
-          <Reveal className="mt-10">
+          <Reveal className="mt-8">
             <MapEmbed
               query={contact.map.query}
               mapLink={settings.contact.mapLink}
@@ -159,18 +159,17 @@ export default function ContactPage() {
       </section>
 
       {/* Floorplan */}
-      <section id="floorplan" className="scroll-mt-24 bg-ivory py-16 sm:py-20">
+      <section id="floorplan" className="scroll-mt-10 bg-white py-12 sm:py-16">
         <div className="container-site">
-          <Reveal className="mb-10 max-w-2xl">
-            <p className="eyebrow">Centre plan</p>
-            <h2 className="heading-2 mt-3">{contact.floorplan.heading}</h2>
+          <Reveal className="mb-8 max-w-2xl">
+            <h2 className="heading-l text-ink">{contact.floorplan.heading}</h2>
             {contact.floorplan.body ? (
-              <p className="lead mt-3">{contact.floorplan.body}</p>
+              <p className="text-body mt-2 text-ink-soft">{contact.floorplan.body}</p>
             ) : null}
           </Reveal>
           {contact.floorplan.image ? (
             <Reveal>
-              <figure className="border border-charcoal/10 bg-white p-4 sm:p-8">
+              <figure className="rounded-xxl bg-cream p-4 sm:p-8">
                 {contact.floorplan.image.endsWith(".svg") ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -188,7 +187,7 @@ export default function ContactPage() {
                   />
                 )}
                 {contact.floorplan.caption ? (
-                  <figcaption className="mt-4 text-center text-xs tracking-wide text-muted-foreground uppercase">
+                  <figcaption className="mt-4 text-center text-xs font-bold text-ink-soft">
                     {contact.floorplan.caption}
                   </figcaption>
                 ) : null}
@@ -198,26 +197,46 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Facilities */}
+      {facilities.length ? (
+        <section id="facilities" className="scroll-mt-10 bg-cream py-12 sm:py-16">
+          <div className="container-site">
+            <Reveal className="mb-8">
+              <h2 className="heading-l text-ink">Good to know</h2>
+              <p className="text-body mt-2 text-ink-soft">
+                The practical details, taken care of.
+              </p>
+            </Reveal>
+            <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {facilities.map((facility) => (
+                <RevealItem key={facility.slug}>
+                  <FacilityCard facility={facility} />
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </div>
+        </section>
+      ) : null}
+
       {/* FAQs */}
       {contact.faqs.length ? (
-        <section id="faqs" className="scroll-mt-24 bg-stone py-16 sm:py-20">
+        <section id="faqs" className="scroll-mt-10 bg-white py-12 sm:py-16">
           <div className="container-narrow">
-            <Reveal className="mb-8 text-center">
-              <p className="eyebrow">Good to know</p>
-              <h2 className="heading-2 mt-3">Frequently asked</h2>
+            <Reveal className="mb-6 text-center">
+              <h2 className="heading-l text-ink">Frequently asked</h2>
             </Reveal>
             <Reveal>
-              <Accordion type="single" collapsible className="border-t border-charcoal/10">
+              <Accordion type="single" collapsible>
                 {contact.faqs.map((faq, i) => (
                   <AccordionItem
                     key={i}
                     value={`faq-${i}`}
-                    className="border-b border-charcoal/10"
+                    className="mb-3 rounded-xl border-0 bg-cream px-5"
                   >
-                    <AccordionTrigger className="py-5 text-left text-[15px] font-bold text-charcoal hover:text-bronze hover:no-underline">
+                    <AccordionTrigger className="font-title py-4 text-left text-base font-bold text-ink hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground">
+                    <AccordionContent className="text-body pb-5 text-ink-soft">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -229,27 +248,26 @@ export default function ContactPage() {
       ) : null}
 
       {/* Lettings */}
-      <section id="lettings" className="scroll-mt-24 bg-charcoal bg-grain py-16 text-ivory sm:py-20">
+      <section id="lettings" className="scroll-mt-10 bg-white pb-16">
         <div className="container-site">
-          <Reveal className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
-            <div className="max-w-xl">
-              <p className="eyebrow-light">Join the centre</p>
-              <h2 className="heading-2 mt-3">{contact.letting.heading}</h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-ivory/70">
-                {contact.letting.body}
-              </p>
-            </div>
-            <div className="shrink-0 border border-gold/40 p-7">
-              <p className="text-[11px] font-semibold tracking-[0.28em] text-gold uppercase">
-                Letting agents
-              </p>
-              <p className="mt-2 text-lg font-bold">{contact.letting.agent}</p>
-              <a
-                href={`tel:${contact.letting.phone.replace(/\s/g, "")}`}
-                className="link-underline mt-1 inline-block text-xl font-extrabold text-gold focus-gold"
-              >
-                {contact.letting.phone}
-              </a>
+          <Reveal>
+            <div className="tile-pattern flex flex-col items-start justify-between gap-8 rounded-xxl bg-tile-green p-8 text-tile-green-text sm:p-10 lg:flex-row lg:items-center">
+              <div className="max-w-xl">
+                <h2 className="heading-l">{contact.letting.heading}</h2>
+                <p className="text-body mt-3">{contact.letting.body}</p>
+              </div>
+              <div className="shrink-0 rounded-xl bg-white/85 p-6 text-ink">
+                <p className="text-xs font-bold text-ink-soft uppercase">
+                  Letting agents
+                </p>
+                <p className="heading-m mt-1">{contact.letting.agent}</p>
+                <a
+                  href={`tel:${contact.letting.phone.replace(/\s/g, "")}`}
+                  className="focus-brand mt-1 inline-block rounded-sm text-lg font-extrabold text-ink underline decoration-yellow decoration-4 underline-offset-4 hover:text-ink-soft"
+                >
+                  {contact.letting.phone}
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>

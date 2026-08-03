@@ -17,8 +17,9 @@ import {
 } from "./limits";
 import {
   FACILITY_ICONS,
-  HERO_MEDIA_TYPES,
   SOCIAL_PLATFORMS,
+  TILE_PALETTES,
+  TILE_TYPES,
   TRAVEL_MODES,
 } from "./options";
 
@@ -90,13 +91,6 @@ const dayHours = z.object({
   closed: z.boolean(),
 });
 
-const sectionHeading = z.object({
-  eyebrow: text("eyebrow"),
-  heading: requiredText("heading"),
-  intro: text("intro").optional(),
-  ctaLabel: text("label").optional(),
-});
-
 const pageHeader = z.object({
   eyebrow: text("eyebrow"),
   heading: requiredText("heading"),
@@ -154,44 +148,31 @@ export const navigationSchema = z.object({
 
 export const homepageSchema = z.object({
   hero: z.object({
-    eyebrow: text("eyebrow"),
-    headline: requiredText("headline"),
-    subheadline: text("intro"),
-    mediaType: z.enum(HERO_MEDIA_TYPES),
-    image: assetPath,
-    videoUrl: assetPath,
-    poster: assetPath,
-    primaryCta: ctaSchema,
-    secondaryCta: ctaSchema,
-    scrollLabel: text("label"),
+    slides: z
+      .array(
+        z.object({
+          image: assetPath,
+          headline: requiredText("headline"),
+          subheadline: text("intro"),
+          cta: ctaSchema,
+        }),
+      )
+      .min(1)
+      .max(6),
   }),
-  intro: z.object({
-    eyebrow: text("eyebrow"),
-    heading: requiredText("heading"),
-    body: paragraphs,
-    image: assetPath,
-    stats: z
-      .array(z.object({ value: requiredText("label"), label: requiredText("short") }))
-      .max(4),
-  }),
-  storesSection: sectionHeading,
-  featuredStores: z.array(slugField).max(12),
-  offersSection: sectionHeading,
-  eventsSection: sectionHeading,
-  newsSection: sectionHeading,
-  facilitiesSection: sectionHeading,
-  visit: z.object({
-    eyebrow: text("eyebrow"),
-    heading: requiredText("heading"),
-    body: text("paragraph"),
-    image: assetPath,
-  }),
-  social: z.object({
-    heading: requiredText("heading"),
-    intro: text("intro"),
-    handle: text("label"),
-    images: z.array(assetPath).max(8),
-  }),
+  tiles: z
+    .array(
+      z.object({
+        type: z.enum(TILE_TYPES),
+        title: requiredText("label"),
+        subtitle: text("excerpt"),
+        href: hrefField,
+        image: assetPath,
+        palette: z.enum(TILE_PALETTES),
+        pattern: z.boolean(),
+      }),
+    )
+    .max(12),
   newsletter: z.object({
     heading: requiredText("heading"),
     body: text("intro"),

@@ -90,7 +90,7 @@ export function SearchOverlay({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="top-24 max-w-xl translate-y-0 overflow-hidden border-charcoal/10 p-0 shadow-2xl"
+        className="top-24 max-w-xl translate-y-0 overflow-hidden rounded-xl border-sand p-0 shadow-2xl"
         showCloseButton={false}
       >
         <DialogHeader className="sr-only">
@@ -139,10 +139,10 @@ export function SearchOverlay({
                   onMouseEnter={() => setActive(i)}
                   className={cn(
                     "flex items-center gap-3 rounded-md px-3 py-2.5 transition-colors",
-                    i === active ? "bg-stone" : "hover:bg-stone/70",
+                    i === active ? "bg-cream" : "hover:bg-cream/70",
                   )}
                 >
-                  <span className="w-12 shrink-0 text-[10px] font-bold uppercase tracking-wider text-bronze">
+                  <span className="w-12 shrink-0 text-[10px] font-bold tracking-wider text-ink-soft uppercase">
                     {item.type}
                   </span>
                   <span className="min-w-0 flex-1">

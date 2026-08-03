@@ -7,9 +7,10 @@
  */
 import {
   FACILITY_ICONS,
-  HERO_MEDIA_TYPES,
   OFFER_BADGES,
   SOCIAL_PLATFORMS,
+  TILE_PALETTES,
+  TILE_TYPES,
   TRAVEL_MODES,
 } from "./options";
 
@@ -42,11 +43,6 @@ export type EditorSection = {
 };
 
 /* Shared sub-layouts */
-
-const ctaFields = (name: string, label: string): FieldDef[] => [
-  { kind: "text", name: `${name}.label`, label: `${label} — label`, limitKey: "label" },
-  { kind: "text", name: `${name}.href`, label: `${label} — link`, limitKey: "url", hint: "Internal path (/stores) or full URL" },
-];
 
 const sectionHeadingFields = (name: string, withCta = true): FieldDef[] => [
   { kind: "text", name: `${name}.eyebrow`, label: "Eyebrow", limitKey: "eyebrow" },
@@ -194,77 +190,48 @@ export const objectEditors: Record<string, EditorSection[]> = {
 
   homepage: [
     {
-      title: "Hero",
-      description: "The full-screen opening section.",
+      title: "Hero slides",
+      description: "The rotating full-height banner on the left of the homepage.",
       fields: [
-        { kind: "text", name: "hero.eyebrow", label: "Eyebrow", limitKey: "eyebrow" },
-        { kind: "text", name: "hero.headline", label: "Headline", limitKey: "headline", required: true },
-        { kind: "textarea", name: "hero.subheadline", label: "Subheadline", limitKey: "intro", rows: 2 },
-        { kind: "select", name: "hero.mediaType", label: "Background type", options: HERO_MEDIA_TYPES },
-        { kind: "image", name: "hero.image", label: "Background image" },
-        { kind: "text", name: "hero.videoUrl", label: "Background video path", limitKey: "url", hint: "MP4 under /public, e.g. /videos/hero.mp4 — used when background type is video." },
-        { kind: "image", name: "hero.poster", label: "Video poster image" },
-        ...ctaFields("hero.primaryCta", "Primary button"),
-        ...ctaFields("hero.secondaryCta", "Secondary button"),
-        { kind: "text", name: "hero.scrollLabel", label: "Scroll hint label", limitKey: "label" },
-      ],
-    },
-    {
-      title: "Welcome",
-      fields: [
-        { kind: "text", name: "intro.eyebrow", label: "Eyebrow", limitKey: "eyebrow" },
-        { kind: "text", name: "intro.heading", label: "Heading", limitKey: "heading", required: true },
-        { kind: "markdown", name: "intro.body", label: "Body", rows: 6 },
-        { kind: "image", name: "intro.image", label: "Image" },
         {
           kind: "object-list",
-          name: "intro.stats",
-          label: "Stats",
-          itemLabelField: "label",
+          name: "hero.slides",
+          label: "Slides",
+          itemLabelField: "headline",
           fields: [
-            { kind: "text", name: "value", label: "Value", limitKey: "label", required: true },
-            { kind: "text", name: "label", label: "Label", limitKey: "short", required: true },
+            { kind: "image", name: "image", label: "Image" },
+            { kind: "text", name: "headline", label: "Headline", limitKey: "headline", required: true },
+            { kind: "textarea", name: "subheadline", label: "Subheadline", limitKey: "intro", rows: 2 },
+            { kind: "text", name: "cta.label", label: "Button label", limitKey: "label" },
+            { kind: "text", name: "cta.href", label: "Button link", limitKey: "url" },
           ],
         },
       ],
     },
     {
-      title: "Featured stores",
+      title: "Tiles",
+      description: "The mosaic of cards on the right of the homepage — the site's main navigation.",
       fields: [
-        ...sectionHeadingFields("storesSection"),
         {
-          kind: "ref-multi",
-          name: "featuredStores",
-          label: "Stores to feature",
-          collection: "stores",
-          hint: "Shown in this order in the homepage carousel.",
+          kind: "object-list",
+          name: "tiles",
+          label: "Tiles",
+          itemLabelField: "title",
+          fields: [
+            { kind: "select", name: "type", label: "Tile type", options: TILE_TYPES },
+            { kind: "text", name: "title", label: "Title", limitKey: "label", required: true },
+            { kind: "textarea", name: "subtitle", label: "Subtitle", limitKey: "excerpt", rows: 2 },
+            { kind: "text", name: "href", label: "Link", limitKey: "url", required: true },
+            { kind: "image", name: "image", label: "Image (image tiles)" },
+            { kind: "select", name: "palette", label: "Colour (colour tiles)", options: TILE_PALETTES },
+            { kind: "toggle", name: "pattern", label: "Decorative squiggle (colour tiles)" },
+          ],
         },
-      ],
-    },
-    { title: "Offers section", fields: sectionHeadingFields("offersSection") },
-    { title: "Events section", fields: sectionHeadingFields("eventsSection") },
-    { title: "News section", fields: sectionHeadingFields("newsSection") },
-    { title: "Facilities section", fields: sectionHeadingFields("facilitiesSection", false) },
-    {
-      title: "Visit band",
-      fields: [
-        { kind: "text", name: "visit.eyebrow", label: "Eyebrow", limitKey: "eyebrow" },
-        { kind: "text", name: "visit.heading", label: "Heading", limitKey: "heading", required: true },
-        { kind: "textarea", name: "visit.body", label: "Body", limitKey: "paragraph", rows: 3 },
-        { kind: "image", name: "visit.image", label: "Image" },
-      ],
-    },
-    {
-      title: "Social section",
-      fields: [
-        { kind: "text", name: "social.heading", label: "Heading", limitKey: "heading", required: true },
-        { kind: "textarea", name: "social.intro", label: "Intro", limitKey: "intro", rows: 2 },
-        { kind: "text", name: "social.handle", label: "Handle", limitKey: "label" },
-        { kind: "string-list", name: "social.images", label: "Image grid", hint: "Optional — site-relative image paths.", limitKey: "url" },
       ],
     },
     {
       title: "Newsletter",
+      description: "Copy for the newsletter panel and footer form.",
       fields: [
         { kind: "text", name: "newsletter.heading", label: "Heading", limitKey: "heading", required: true },
         { kind: "textarea", name: "newsletter.body", label: "Body", limitKey: "intro", rows: 2 },

@@ -1,10 +1,9 @@
-import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 import type { PageHeader as PageHeaderContent } from "@/types/content";
 
 /**
- * The charcoal intro band inner pages open with — sits under the fixed
- * transparent header and gives every page a composed, premium opening.
+ * Inner-page opener in the reference language: white space, big friendly
+ * display heading, quiet grey intro — sitting below the absolute header.
  */
 export function PageHeader({
   content,
@@ -17,22 +16,14 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <section
-      className={cn(
-        "bg-charcoal bg-grain pt-36 pb-14 text-ivory sm:pt-44 sm:pb-20",
-        className,
-      )}
-    >
+    <section className={cn("bg-white pt-32 pb-10 sm:pt-36", className)}>
       <div className="container-site">
-        <Reveal>
-          {content.eyebrow ? (
-            <p className="eyebrow-light">{content.eyebrow}</p>
-          ) : null}
-          <h1 className="heading-1 mt-4 max-w-3xl">{content.heading}</h1>
-          {content.intro ? (
-            <p className="lead mt-5 max-w-2xl text-ivory/70">{content.intro}</p>
-          ) : null}
-        </Reveal>
+        <h1 className="heading-xl max-w-3xl text-ink lg:text-[2.75rem] lg:leading-[1.09]">
+          {content.heading}
+        </h1>
+        {content.intro ? (
+          <p className="text-body-l mt-4 max-w-2xl text-ink-soft">{content.intro}</p>
+        ) : null}
         {children}
       </div>
     </section>

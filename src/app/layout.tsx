@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { buildMetadata } from "@/lib/seo";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const baloo = Baloo_2({
+  variable: "--font-baloo",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={manrope.variable}>
+    <html lang="en-GB" className={baloo.variable}>
       <body className="font-sans">{children}</body>
     </html>
   );

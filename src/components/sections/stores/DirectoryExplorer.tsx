@@ -3,7 +3,8 @@
 /**
  * The store directory: instant search, category chips, an A–Z rail and a
  * live open-now indicator — all client-side over the statically delivered
- * store list, so filtering is immediate.
+ * store list, so filtering is immediate. Styled in the tile language:
+ * cream pills, yellow active states.
  */
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -77,73 +78,77 @@ export function DirectoryExplorer({
 
   return (
     <div>
-      <PageHeader content={header} className="pb-10 sm:pb-12">
-        <div className="mt-10 space-y-5">
-        <div className="flex flex-wrap items-center gap-4">
-          <div className="relative w-full max-w-md">
-            <Search
-              className="absolute top-1/2 left-4 size-4 -translate-y-1/2 text-ivory/40"
-              aria-hidden
-            />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by name or category…"
-              aria-label="Search stores"
-              className="h-12 w-full border border-ivory/20 bg-ivory/5 pr-4 pl-11 text-sm text-ivory placeholder:text-ivory/40 backdrop-blur-sm transition-colors outline-none focus:border-gold"
-            />
+      <PageHeader content={header} className="pb-6">
+        <div className="mt-8 space-y-5">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="relative w-full max-w-md">
+              <Search
+                className="absolute top-1/2 left-5 size-4 -translate-y-1/2 text-ink-soft"
+                aria-hidden
+              />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search by name or category…"
+                aria-label="Search stores"
+                className="h-12 w-full rounded-full bg-cream pr-5 pl-12 text-sm text-ink transition-colors outline-none placeholder:text-ink-soft focus:bg-sand"
+              />
+            </div>
+            <OpenNowBadge hours={hours} className="bg-cream" />
           </div>
-          <OpenNowBadge hours={hours} tone="dark" />
-        </div>
 
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-          <FilterChip active={category === null} onClick={() => setCategory(null)}>
-            All stores
-          </FilterChip>
-          {categories.map((c) => (
-            <FilterChip key={c} active={category === c} onClick={() => setCategory(category === c ? null : c)}>
-              {c}
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+            <FilterChip active={category === null} onClick={() => setCategory(null)}>
+              All stores
             </FilterChip>
-          ))}
-        </div>
-
-        <div
-          className="scrollbar-none -mx-1 flex gap-0.5 overflow-x-auto px-1 pt-1"
-          role="group"
-          aria-label="Filter by first letter"
-        >
-          {ALPHABET.map((l) => {
-            const enabled = activeLetters.has(l);
-            return (
-              <button
-                key={l}
-                type="button"
-                disabled={!enabled}
-                aria-pressed={letter === l}
-                onClick={() => setLetter(letter === l ? null : l)}
-                className={cn(
-                  "size-8 shrink-0 rounded-full text-[11px] font-bold transition-colors focus-gold",
-                  letter === l
-                    ? "bg-gold text-charcoal"
-                    : enabled
-                      ? "text-ivory/70 hover:bg-ivory/10 hover:text-ivory"
-                      : "text-ivory/20",
-                )}
+            {categories.map((c) => (
+              <FilterChip
+                key={c}
+                active={category === c}
+                onClick={() => setCategory(category === c ? null : c)}
               >
-                {l}
-              </button>
-            );
-          })}
+                {c}
+              </FilterChip>
+            ))}
+          </div>
+
+          <div
+            className="scrollbar-none -mx-1 flex gap-0.5 overflow-x-auto px-1 pt-1"
+            role="group"
+            aria-label="Filter by first letter"
+          >
+            {ALPHABET.map((l) => {
+              const enabled = activeLetters.has(l);
+              return (
+                <button
+                  key={l}
+                  type="button"
+                  disabled={!enabled}
+                  aria-pressed={letter === l}
+                  onClick={() => setLetter(letter === l ? null : l)}
+                  className={cn(
+                    "focus-brand size-8 shrink-0 rounded-full text-xs font-bold transition-colors",
+                    letter === l
+                      ? "bg-yellow text-ink"
+                      : enabled
+                        ? "text-ink hover:bg-cream"
+                        : "text-ink/20",
+                  )}
+                >
+                  {l}
+                </button>
+              );
+            })}
           </div>
         </div>
       </PageHeader>
 
       {/* Results */}
-      <div className="bg-ivory">
-        <div className="container-site py-14 sm:py-16">
-          <div className="mb-8 flex items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground" aria-live="polite">
+      <div className="bg-white">
+        <div className="container-site pb-16">
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <p className="text-sm text-ink-soft" aria-live="polite">
               {filtered.length} {filtered.length === 1 ? "store" : "stores"}
               {category ? ` in ${category}` : ""}
             </p>
@@ -151,7 +156,7 @@ export function DirectoryExplorer({
               <button
                 type="button"
                 onClick={clearAll}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider text-bronze uppercase hover:text-charcoal focus-gold"
+                className="focus-brand inline-flex items-center gap-1.5 rounded-full bg-cream px-3.5 py-1.5 text-xs font-bold text-ink hover:bg-sand"
               >
                 <X className="size-3.5" aria-hidden /> Clear filters
               </button>
@@ -159,14 +164,14 @@ export function DirectoryExplorer({
           </div>
 
           {filtered.length === 0 ? (
-            <div className="border border-dashed border-charcoal/20 px-6 py-20 text-center">
-              <p className="text-lg font-bold text-charcoal">No stores found</p>
-              <p className="mt-2 text-sm text-muted-foreground">
+            <div className="rounded-xl bg-cream px-6 py-20 text-center">
+              <p className="heading-m text-ink">No stores found</p>
+              <p className="text-body mt-2 text-ink-soft">
                 Try a different search or clear the filters.
               </p>
             </div>
           ) : (
-            <motion.ul layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <motion.ul layout className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <AnimatePresence mode="popLayout">
                 {filtered.map((store) => (
                   <motion.li
@@ -175,7 +180,7 @@ export function DirectoryExplorer({
                     initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.97 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
                   >
                     <StoreCard store={store} className="h-full" />
                   </motion.li>
@@ -204,10 +209,8 @@ function FilterChip({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wide transition-all focus-gold",
-        active
-          ? "border-gold bg-gold text-charcoal"
-          : "border-ivory/25 text-ivory/75 hover:border-ivory/60 hover:text-ivory",
+        "focus-brand rounded-full px-4 py-2 text-xs leading-none font-bold transition-colors",
+        active ? "bg-yellow text-ink" : "bg-cream text-ink hover:bg-sand",
       )}
     >
       {children}

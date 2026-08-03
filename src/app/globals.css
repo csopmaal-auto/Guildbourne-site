@@ -7,11 +7,28 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", monospace;
-  --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-title: var(--font-baloo), Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-baloo), Arial, ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand tokens */
+  /* ————— Public-site tokens (Churchill-pattern system) ————— */
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-yellow: var(--yellow);
+  --color-yellow-dark: var(--yellow-dark);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-tile-red: var(--tile-red);
+  --color-tile-red-text: var(--tile-red-text);
+  --color-tile-blue: var(--tile-blue);
+  --color-tile-blue-text: var(--tile-blue-text);
+  --color-tile-green: var(--tile-green);
+  --color-tile-green-text: var(--tile-green-text);
+  --color-backdrop: var(--backdrop);
+
+  /* ————— Admin-panel tokens (unchanged, keeps /admin styling) ————— */
   --color-charcoal: var(--charcoal);
   --color-charcoal-soft: var(--charcoal-soft);
   --color-ivory: var(--ivory);
@@ -53,67 +70,83 @@
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-xl: 0.75rem;   /* card radius (rounded-xl) */
+  --radius-2xl: 1.25rem;  /* pills/panels */
+  --radius-xxl: 2rem;     /* hero panel / sheets */
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
-  --animate-marquee: marquee 40s linear infinite;
-  --animate-scroll-hint: scroll-hint 2.2s var(--ease-luxe) infinite;
-  --animate-fade-in: fade-in 0.6s var(--ease-luxe) both;
+  --ease-tile: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-sheet-up: sheet-up 0.3s ease-out both;
+  --animate-panel-in: panel-in 0.35s ease-out both;
+  --animate-fade-caption: fade-caption 0.5s ease both;
 
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+  @keyframes sheet-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
   }
-  @keyframes scroll-hint {
-    0% { transform: translateY(0); opacity: 0.9; }
-    55% { transform: translateY(0.6rem); opacity: 0.25; }
-    100% { transform: translateY(0); opacity: 0.9; }
+  @keyframes panel-in {
+    from { transform: translateX(2rem); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
-  @keyframes fade-in {
+  @keyframes fade-caption {
     from { opacity: 0; transform: translateY(0.75rem); }
     to { opacity: 1; transform: translateY(0); }
   }
 }
 
 :root {
-  /* ————— Guildbourne brand palette ————— */
-  --charcoal: oklch(0.216 0.004 84);        /* deep warm charcoal  #1c1b18 */
-  --charcoal-soft: oklch(0.268 0.005 84);   /* raised charcoal     #2a2925 */
-  --ivory: oklch(0.982 0.004 91);           /* soft warm white     #fafaf7 */
-  --stone: oklch(0.945 0.006 84);           /* light warm gray     #f0eeea */
-  --stone-dark: oklch(0.885 0.008 84);      /* mid warm gray       #ded9d0-ish */
-  --gold: oklch(0.735 0.085 84);            /* warm gold           #c2a262-ish */
-  --gold-soft: oklch(0.855 0.06 88);        /* pale gold           #e4d3ab-ish */
-  --bronze: oklch(0.545 0.075 78);          /* muted bronze        #8a6f3f-ish */
+  /* ————— Public palette (Churchill-pattern values) ————— */
+  --paper: #ffffff;
+  --cream: #f7f4ef;
+  --sand: #eae3da;
+  --yellow: #ffdb00;
+  --yellow-dark: #eec900;
+  --ink: #474747;
+  --ink-soft: #767571;
+  --tile-red: #f4a698;
+  --tile-red-text: #5d130e;
+  --tile-blue: #b0d7ec;
+  --tile-blue-text: #0058a3;
+  --tile-green: #c0d9ca;
+  --tile-green-text: #05676a;
+  --backdrop: rgba(71, 71, 71, 0.6);
+
+  /* ————— Admin palette (unchanged) ————— */
+  --charcoal: oklch(0.216 0.004 84);
+  --charcoal-soft: oklch(0.268 0.005 84);
+  --ivory: oklch(0.982 0.004 91);
+  --stone: oklch(0.945 0.006 84);
+  --stone-dark: oklch(0.885 0.008 84);
+  --gold: oklch(0.735 0.085 84);
+  --gold-soft: oklch(0.855 0.06 88);
+  --bronze: oklch(0.545 0.075 78);
 
   /* ————— Semantic (shadcn) ————— */
-  --background: var(--ivory);
-  --foreground: var(--charcoal);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--charcoal);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--charcoal);
-  --primary: var(--charcoal);
-  --primary-foreground: var(--ivory);
-  --secondary: var(--stone);
-  --secondary-foreground: var(--charcoal);
-  --muted: var(--stone);
-  --muted-foreground: oklch(0.47 0.008 84);
-  --accent: var(--stone);
-  --accent-foreground: var(--charcoal);
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--yellow);
+  --primary-foreground: var(--ink);
+  --secondary: var(--cream);
+  --secondary-foreground: var(--ink);
+  --muted: var(--cream);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--sand);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.55 0.19 27);
-  --border: oklch(0.9 0.006 84);
-  --input: oklch(0.9 0.006 84);
-  --ring: var(--gold);
-  --chart-1: var(--gold);
-  --chart-2: var(--bronze);
-  --chart-3: oklch(0.47 0.008 84);
-  --chart-4: var(--charcoal-soft);
-  --chart-5: var(--stone-dark);
-  --radius: 0.125rem;
+  --border: var(--sand);
+  --input: var(--sand);
+  --ring: var(--ink-soft);
+  --chart-1: var(--yellow);
+  --chart-2: var(--tile-blue-text);
+  --chart-3: var(--ink-soft);
+  --chart-4: var(--tile-green-text);
+  --chart-5: var(--sand);
+  --radius: 0.75rem;
   --sidebar: var(--charcoal);
   --sidebar-foreground: var(--ivory);
   --sidebar-primary: var(--gold);
@@ -131,8 +164,8 @@
   --card-foreground: var(--ivory);
   --popover: var(--charcoal-soft);
   --popover-foreground: var(--ivory);
-  --primary: var(--ivory);
-  --primary-foreground: var(--charcoal);
+  --primary: var(--yellow);
+  --primary-foreground: var(--ink);
   --secondary: var(--charcoal-soft);
   --secondary-foreground: var(--ivory);
   --muted: var(--charcoal-soft);
@@ -142,7 +175,7 @@
   --destructive: oklch(0.65 0.17 25);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: var(--gold);
+  --ring: var(--yellow);
 }
 
 @layer base {
@@ -150,18 +183,18 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans;
   }
   body {
     @apply bg-background text-foreground antialiased;
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: var(--gold);
-    color: var(--charcoal);
+    background: var(--yellow);
+    color: var(--ink);
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-title font-bold;
     text-wrap: balance;
   }
   p {
@@ -170,100 +203,73 @@
 }
 
 @layer components {
-  /* Site container — 1360px design width */
   .container-site {
-    @apply mx-auto w-full max-w-[85rem] px-5 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[85rem] px-5 sm:px-7 lg:px-10;
   }
   .container-narrow {
-    @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-3xl px-5 sm:px-7;
   }
 
-  /* Small-caps gold label above headings */
-  .eyebrow {
-    @apply text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-bronze;
+  /* Type scale (reference: headingxl 36/40, l 28/32, m 24/28, xs 14/18, body 14/22) */
+  .heading-xl {
+    @apply font-title text-[2.25rem] leading-[1.11] font-bold;
   }
-  .eyebrow-light {
-    @apply text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-gold;
+  .heading-l {
+    @apply font-title text-[1.75rem] leading-[1.14] font-bold;
   }
-
-  /* Display headings */
-  .heading-display {
-    @apply text-4xl leading-[1.04] font-extrabold tracking-[-0.03em] sm:text-6xl lg:text-7xl xl:text-[5.25rem];
+  .heading-m {
+    @apply font-title text-2xl leading-[1.17] font-bold;
   }
-  .heading-1 {
-    @apply text-4xl leading-[1.06] font-extrabold tracking-[-0.025em] sm:text-5xl lg:text-6xl;
+  .heading-xs {
+    @apply font-title text-sm leading-[1.29] font-bold;
   }
-  .heading-2 {
-    @apply text-3xl leading-[1.1] font-bold tracking-[-0.02em] sm:text-4xl lg:text-5xl;
+  .text-body {
+    @apply text-sm leading-[1.57];
   }
-  .heading-3 {
-    @apply text-xl leading-snug font-bold tracking-[-0.01em] sm:text-2xl;
-  }
-  .lead {
-    @apply text-base leading-relaxed text-muted-foreground sm:text-lg;
+  .text-body-l {
+    @apply text-base leading-relaxed;
   }
 
-  /* Gold hairline used as a section flourish */
-  .hairline-gold {
-    @apply h-px w-12 bg-gold;
+  /* The tile — the core card primitive */
+  .tile {
+    @apply relative block transform-gpu overflow-hidden rounded-xl transition-all duration-200 ease-in-out;
+  }
+  .tile-caption {
+    @apply absolute right-0 bottom-0 left-0 transform-gpu px-5 pt-5 pb-10;
+  }
+  .tile-gradient {
+    background-image: linear-gradient(to bottom, transparent 40%, rgba(28, 27, 24, 0.72));
   }
 
-  /* Animated underline for nav / inline links */
-  .link-underline {
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.45s var(--ease-luxe);
-  }
-  .link-underline:hover,
-  .link-underline:focus-visible,
-  .link-underline[data-active="true"] {
-    background-size: 100% 1px;
+  /* Pill button (reference CTA: rounded-full yellow, px-6 py-3.5) */
+  .pill-button {
+    @apply inline-block rounded-full bg-yellow px-6 py-3.5 text-sm leading-none font-bold text-ink no-underline transition-colors duration-200 hover:bg-yellow-dark;
   }
 
-  /* Card hover media zoom */
-  .media-zoom {
-    @apply overflow-hidden;
-  }
-  .media-zoom img,
-  .media-zoom video {
-    transition: transform 0.9s var(--ease-luxe);
-  }
-  .media-zoom:hover img,
-  .media-zoom:hover video {
-    transform: scale(1.05);
-  }
-
-  /* Focus ring consistent with brand */
-  .focus-gold {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  .focus-brand {
+    @apply focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ink-soft/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }
 
 @layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(100deg, var(--gold-soft) 0%, var(--gold) 45%, var(--bronze) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .rounded-xxl {
+    border-radius: var(--radius-xxl);
   }
-  .bg-grain {
-    position: relative;
-  }
-  .bg-grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  .rounded-t-xxl {
+    border-top-left-radius: var(--radius-xxl);
+    border-top-right-radius: var(--radius-xxl);
   }
   .scrollbar-none {
     scrollbar-width: none;
   }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+  /* Decorative squiggle stroke for colour tiles (reference: bg-dynamicStroke*) */
+  .tile-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340' viewBox='0 0 340 340' fill='none'%3E%3Cpath d='M-20 260 Q 40 190 110 240 T 250 220 T 400 260' stroke='currentColor' stroke-opacity='0.28' stroke-width='26' stroke-linecap='round' fill='none'/%3E%3Cpath d='M-30 90 Q 60 30 150 70 T 380 60' stroke='currentColor' stroke-opacity='0.16' stroke-width='18' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
   }
 }
 

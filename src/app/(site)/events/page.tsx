@@ -16,7 +16,7 @@ export default function EventsPage() {
   return (
     <>
       <PageHeader content={pages.events} />
-      <div className="bg-ivory">
+      <div className="bg-white">
         <EventsExplorer upcoming={upcoming} past={past} />
       </div>
     </>

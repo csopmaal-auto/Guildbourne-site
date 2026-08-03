@@ -4,7 +4,10 @@ import { formatDate } from "@/utils/format";
 import { cn } from "@/lib/utils";
 import type { NewsArticle } from "@/types/content";
 
-/** Editorial news card; `featured` renders the large magazine variant. */
+/**
+ * News card as a mosaic tile; `featured` makes a taller hero tile. Pastel
+ * blue block stands in when a story has no image.
+ */
 export function NewsCard({
   article,
   featured = false,
@@ -18,57 +21,43 @@ export function NewsCard({
     <Link
       href={`/news/${article.slug}`}
       className={cn(
-        "group flex h-full flex-col focus-gold",
-        featured && "lg:flex-row lg:items-stretch lg:gap-10",
+        "tile group focus-brand h-full text-white",
+        featured ? "min-h-96 sm:min-h-[28rem]" : "min-h-72",
         className,
       )}
     >
-      <div
-        className={cn(
-          "media-zoom relative overflow-hidden",
-          featured ? "h-64 sm:h-80 lg:h-auto lg:w-3/5" : "h-52",
-        )}
-      >
+      {article.image ? (
         <CoverImage
-          src={article.image || undefined}
+          src={article.image}
           alt=""
-          sizes={featured ? "(min-width:1024px) 60vw, 100vw" : "(min-width:1024px) 33vw, 100vw"}
+          sizes={featured ? "(min-width:1024px) 66vw, 100vw" : "(min-width:1024px) 33vw, 100vw"}
           className="absolute inset-0"
         />
-        <span
-          aria-hidden
-          className="absolute inset-0 bg-charcoal/0 transition-colors duration-500 group-hover:bg-charcoal/10"
-        />
-      </div>
-      <div className={cn("flex flex-1 flex-col pt-5", featured && "lg:justify-center lg:pt-0")}>
-        <p className="flex items-center gap-2.5 text-[10px] font-bold tracking-[0.22em] text-bronze uppercase">
-          {article.category}
-          <span aria-hidden className="h-px w-6 bg-gold/60" />
-          <time dateTime={article.date} className="font-semibold text-muted-foreground">
-            {formatDate(article.date)}
-          </time>
-        </p>
-        <h3
-          className={cn(
-            "mt-2.5 font-bold tracking-tight text-charcoal transition-colors group-hover:text-bronze",
-            featured ? "text-2xl leading-tight sm:text-3xl lg:text-4xl" : "text-lg leading-snug",
-          )}
-        >
-          {article.title}
-        </h3>
-        {article.excerpt ? (
-          <p
+      ) : (
+        <span aria-hidden className="tile-pattern absolute inset-0 bg-tile-blue text-tile-blue-text" />
+      )}
+      <div className="tile-gradient absolute inset-0 transition-all duration-200 ease-in-out lg:group-hover:bg-backdrop">
+        <span className="absolute top-4 left-4 rounded-full bg-white px-3 py-1.5 text-xs leading-none font-bold text-ink">
+          {article.category || "News"}
+        </span>
+        <div className="tile-caption">
+          <p className="text-xs font-bold text-white/80">
+            <time dateTime={article.date}>{formatDate(article.date)}</time>
+          </p>
+          <h3
             className={cn(
-              "mt-2.5 leading-relaxed text-muted-foreground",
-              featured ? "line-clamp-3 text-base" : "line-clamp-2 text-[13px]",
+              "mt-1 transition-all duration-200 ease-in-out lg:group-hover:text-yellow",
+              featured ? "heading-l" : "heading-m",
             )}
           >
-            {article.excerpt}
-          </p>
-        ) : null}
-        <span className="link-underline mt-4 w-fit pb-0.5 text-[11px] font-semibold tracking-[0.22em] text-bronze uppercase">
-          Read the story
-        </span>
+            {article.title}
+          </h3>
+          {article.excerpt ? (
+            <p className={cn("text-body mt-1", featured ? "line-clamp-3" : "line-clamp-2")}>
+              {article.excerpt}
+            </p>
+          ) : null}
+        </div>
       </div>
     </Link>
   );

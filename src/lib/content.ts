@@ -73,11 +73,6 @@ export const getArticle = (slug: string): NewsArticle | undefined =>
 export const getLegalPage = (slug: string): LegalPage | undefined =>
   legalPages.find((l) => l.slug === slug);
 
-/** Featured stores in the order chosen on the homepage (missing slugs dropped). */
-export const featuredStores: Store[] = homepage.featuredStores
-  .map((slug) => getStore(slug))
-  .filter((s): s is Store => Boolean(s));
-
 /** Stores related to the given one — same category first, then neighbours. */
 export function relatedStores(store: Store, count = 4): Store[] {
   const sameCategory = storesAlphabetical.filter(

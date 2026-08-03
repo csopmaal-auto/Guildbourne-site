@@ -39,6 +39,12 @@ export const TRAVEL_MODES = ["walk", "car", "bus", "train"] as const;
 
 export const HERO_MEDIA_TYPES = ["image", "video"] as const;
 
+/** Homepage masonry tile variants. */
+export const TILE_TYPES = ["image", "color"] as const;
+
+/** Colour palettes a colour tile can use (background + matching deep text). */
+export const TILE_PALETTES = ["yellow", "red", "blue", "green", "sand"] as const;
+
 export const OFFER_BADGES = [
   "In store",
   "Service",

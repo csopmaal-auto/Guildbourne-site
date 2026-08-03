@@ -50,16 +50,12 @@ const ICON_MAP: Record<string, LucideIcon> = {
 export function FacilityCard({ facility }: { facility: Facility }) {
   const Icon = ICON_MAP[facility.icon] ?? Sparkles;
   return (
-    <div className="group border border-charcoal/8 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[0_18px_40px_-18px_rgba(28,27,24,0.25)]">
-      <span className="inline-flex size-12 items-center justify-center rounded-full bg-stone text-bronze transition-all duration-500 group-hover:bg-gold group-hover:text-charcoal">
+    <div className="group rounded-xl bg-cream p-6 transition-colors duration-200 hover:bg-sand">
+      <span className="grid size-12 place-items-center rounded-full bg-yellow text-ink">
         <Icon className="size-5" aria-hidden />
       </span>
-      <h3 className="mt-5 text-lg font-bold tracking-tight text-charcoal">
-        {facility.title}
-      </h3>
-      <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-        {facility.description}
-      </p>
+      <h3 className="heading-m mt-4 text-ink">{facility.title}</h3>
+      <p className="text-body mt-1.5 text-ink-soft">{facility.description}</p>
     </div>
   );
 }

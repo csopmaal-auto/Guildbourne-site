@@ -1,53 +1,53 @@
 import type { Metadata } from "next";
-import { HomeHero } from "@/components/sections/home/HomeHero";
-import { WelcomeSection } from "@/components/sections/home/WelcomeSection";
-import { FeaturedStores } from "@/components/sections/home/FeaturedStores";
-import { OffersSection } from "@/components/sections/home/OffersSection";
-import { EventsSection } from "@/components/sections/home/EventsSection";
-import { NewsSection } from "@/components/sections/home/NewsSection";
-import { FacilitiesSection } from "@/components/sections/home/FacilitiesSection";
-import { VisitSection } from "@/components/sections/home/VisitSection";
-import { SocialSection } from "@/components/sections/home/SocialSection";
-import { NewsletterSection } from "@/components/sections/home/NewsletterSection";
-import {
-  eventsByDate,
-  facilities,
-  featuredStores,
-  homepage,
-  isUpcoming,
-  newsByDate,
-  offers,
-  settings,
-} from "@/lib/content";
+import { HeroCarousel } from "@/components/sections/home/HeroCarousel";
+import { Tile } from "@/components/sections/home/Tile";
+import { homepage } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata("/");
+export const dynamic = "force-static";
 
+/**
+ * The split homepage (reference pattern): a sticky full-height hero carousel
+ * on the left, a two-column mosaic of navigation tiles scrolling past it on
+ * the right. The second tile column starts lower to clear the header's
+ * opening-hours pill.
+ */
 export default function HomePage() {
-  const upcomingEvents = eventsByDate.filter((e) => isUpcoming(e));
-  const eventsToShow = upcomingEvents.length
-    ? upcomingEvents
-    : eventsByDate.slice(-3);
+  const tiles = homepage.tiles;
+  const columnA = tiles.filter((_, i) => i % 2 === 0);
+  const columnB = tiles.filter((_, i) => i % 2 === 1);
 
   return (
-    <>
-      <HomeHero hero={homepage.hero} />
-      <WelcomeSection intro={homepage.intro} />
-      <FeaturedStores heading={homepage.storesSection} stores={featuredStores} />
-      <OffersSection heading={homepage.offersSection} offers={offers} />
-      <EventsSection heading={homepage.eventsSection} events={eventsToShow} />
-      <NewsSection heading={homepage.newsSection} articles={newsByDate} />
-      <FacilitiesSection
-        heading={homepage.facilitiesSection}
-        facilities={facilities}
-      />
-      <VisitSection visit={homepage.visit} settings={settings} />
-      <SocialSection social={homepage.social} settings={settings} />
-      <NewsletterSection newsletter={homepage.newsletter} />
-    </>
+    <div className="grid grid-cols-11 gap-5 bg-white lg:px-6">
+      {/* Left: sticky hero */}
+      <div className="col-span-11 lg:col-span-5">
+        <section className="relative top-0 z-10 bg-white lg:sticky lg:pt-6">
+          <HeroCarousel slides={homepage.hero.slides} />
+        </section>
+      </div>
+
+      {/* Right: mosaic feed */}
+      <div className="col-span-11 px-5 lg:col-span-6 lg:mt-6 lg:px-0">
+        <div className="flex gap-5 pb-10">
+          <div className="flex w-full flex-col lg:w-1/2">
+            {columnA.map((tile) => (
+              <Tile key={tile.href + tile.title} tile={tile} className="mb-5" />
+            ))}
+            {/* On mobile the columns collapse into one — render B's tiles too */}
+            <div className="lg:hidden">
+              {columnB.map((tile) => (
+                <Tile key={tile.href + tile.title} tile={tile} className="mb-5" />
+              ))}
+            </div>
+          </div>
+          <div className="hidden w-1/2 flex-col lg:mt-[6.75rem] lg:flex">
+            {columnB.map((tile) => (
+              <Tile key={tile.href + tile.title} tile={tile} className="mb-5" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
-
-// Static generation with content from the build — revalidation happens by
-// rebuilding (the CMS publish action).
-export const dynamic = "force-static";

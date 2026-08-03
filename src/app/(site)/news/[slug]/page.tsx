@@ -55,33 +55,41 @@ export default async function NewsArticlePage({ params }: Params) {
 
   return (
     <article>
-      <header className="bg-charcoal bg-grain pt-32 pb-12 text-ivory sm:pt-40 sm:pb-16">
+      <header className="bg-white pt-32 sm:pt-36">
         <div className="container-site">
           <Reveal>
             <nav aria-label="Breadcrumb">
               <Link
                 href="/news"
-                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-[0.22em] text-ivory/60 uppercase transition-colors hover:text-gold focus-gold"
+                className="focus-brand inline-flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-xs leading-none font-bold text-ink transition-colors hover:bg-sand"
               >
                 <ArrowLeft className="size-3.5" aria-hidden /> News & stories
               </Link>
             </nav>
-            <p className="mt-8 flex items-center gap-3 text-[11px] font-bold tracking-[0.22em] text-gold uppercase">
-              {article.category}
-              <span aria-hidden className="h-px w-8 bg-gold/50" />
-              <time dateTime={article.date} className="font-semibold text-ivory/60">
+            <p className="mt-8 flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-cream px-3.5 py-1.5 text-xs leading-none font-bold text-ink">
+                {article.category || "News"}
+              </span>
+              <time
+                dateTime={article.date}
+                className="text-sm font-bold text-ink-soft"
+              >
                 {formatDate(article.date)}
               </time>
             </p>
-            <h1 className="heading-1 mt-4 max-w-4xl">{article.title}</h1>
+            <h1 className="heading-xl mt-4 max-w-4xl text-ink lg:text-[2.75rem] lg:leading-[1.09]">
+              {article.title}
+            </h1>
             {article.excerpt ? (
-              <p className="lead mt-5 max-w-2xl text-ivory/70">{article.excerpt}</p>
+              <p className="text-body-l mt-4 max-w-2xl text-ink-soft">
+                {article.excerpt}
+              </p>
             ) : null}
           </Reveal>
         </div>
       </header>
 
-      <div className="bg-ivory py-16 sm:py-20">
+      <div className="bg-white py-10 sm:py-12">
         <div className="container-narrow">
           {article.image ? (
             <Reveal className="mb-10">
@@ -89,7 +97,7 @@ export default async function NewsArticlePage({ params }: Params) {
                 src={article.image}
                 alt=""
                 sizes="(min-width:768px) 48rem, 100vw"
-                className="aspect-[16/9]"
+                className="aspect-[16/9] rounded-xl"
               />
             </Reveal>
           ) : null}
@@ -100,16 +108,15 @@ export default async function NewsArticlePage({ params }: Params) {
       </div>
 
       {related.length ? (
-        <section className="bg-stone py-16 sm:py-20">
+        <section className="bg-cream py-12 sm:py-16">
           <div className="container-site">
-            <Reveal className="mb-10">
-              <p className="eyebrow">Keep reading</p>
-              <h2 className="heading-2 mt-3">More from the journal</h2>
+            <Reveal className="mb-8">
+              <h2 className="heading-l text-ink">More from the centre</h2>
             </Reveal>
-            <RevealGroup className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((a) => (
                 <RevealItem key={a.slug}>
-                  <NewsCard article={a} />
+                  <NewsCard article={a} className="min-h-80" />
                 </RevealItem>
               ))}
             </RevealGroup>

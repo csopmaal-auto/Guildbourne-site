@@ -5,6 +5,7 @@ import type { SearchItem } from "@/components/layout/SearchOverlay";
 import { LenisProvider } from "@/components/motion/LenisProvider";
 import {
   events,
+  homepage,
   navigation,
   news,
   offers,
@@ -56,6 +57,8 @@ export default function SiteLayout({
         navigation={navigation}
         settings={settings}
         searchIndex={buildSearchIndex()}
+        menuTiles={homepage.tiles.filter((t) => t.type === "image").slice(0, 2)}
+        newsletter={homepage.newsletter}
       />
       <main id="content">{children}</main>
       <Footer />

@@ -2,13 +2,16 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import { CoverImage } from "@/components/ui/media";
 import { daysUntil } from "@/utils/format";
 import { cn } from "@/lib/utils";
 import type { Offer } from "@/types/content";
 
-/** Promotional card with optional live countdown chip. */
+/**
+ * Offer card as a mosaic tile — yellow pastel block (or image) with badge
+ * and optional live countdown chip; title yellow-on-hover for image tiles.
+ */
 export function OfferCard({
   offer,
   storeName,
@@ -21,68 +24,88 @@ export function OfferCard({
   className?: string;
 }) {
   const href = offer.cta.href || (offer.store ? `/stores/${offer.store}` : "/offers");
+  const hasImage = Boolean(offer.image);
 
   return (
-    <article
+    <Link
+      href={href}
       className={cn(
-        "group relative flex flex-col overflow-hidden bg-charcoal text-ivory transition-all duration-500 hover:shadow-[0_24px_50px_-20px_rgba(28,27,24,0.5)]",
+        "tile group focus-brand flex h-full flex-col",
+        hasImage ? "text-white" : "bg-yellow text-ink lg:hover:brightness-95",
+        large ? "min-h-96" : "min-h-72",
         className,
       )}
     >
-      <div className={cn("media-zoom relative", large ? "min-h-56 flex-1" : "h-40")}>
+      {hasImage ? (
         <CoverImage
-          src={offer.image || undefined}
+          src={offer.image}
           alt=""
-          sizes={large ? "(min-width:1024px) 50vw, 100vw" : "(min-width:1024px) 25vw, 100vw"}
+          sizes={large ? "(min-width:1024px) 66vw, 100vw" : "(min-width:1024px) 33vw, 100vw"}
           className="absolute inset-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/35 to-charcoal/10" />
+      ) : (
+        <span aria-hidden className="tile-pattern absolute inset-0" />
+      )}
+      <div
+        className={cn(
+          "absolute inset-0",
+          hasImage &&
+            "tile-gradient transition-all duration-200 ease-in-out lg:group-hover:bg-backdrop",
+        )}
+      >
         <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
           {offer.badge ? (
-            <span className="bg-gold px-2.5 py-1 text-[10px] font-bold tracking-[0.18em] text-charcoal uppercase">
+            <span
+              className={cn(
+                "rounded-full px-3 py-1.5 text-xs leading-none font-bold",
+                hasImage ? "bg-white text-ink" : "bg-ink text-yellow",
+              )}
+            >
               {offer.badge}
             </span>
           ) : null}
-          <CountdownChip validUntil={offer.validUntil} />
+          <CountdownChip validUntil={offer.validUntil} onImage={hasImage} />
+        </div>
+        <div className="tile-caption">
+          {storeName ? (
+            <p className={cn("text-xs font-bold", hasImage ? "text-white/80" : "text-ink/70")}>
+              {storeName}
+            </p>
+          ) : null}
+          <h3
+            className={cn(
+              "mt-1",
+              large ? "heading-l" : "heading-m",
+              hasImage &&
+                "transition-all duration-200 ease-in-out lg:group-hover:text-yellow",
+            )}
+          >
+            {offer.title}
+          </h3>
+          {offer.excerpt ? (
+            <p
+              className={cn(
+                "text-body mt-1 line-clamp-3",
+                !hasImage && "text-ink/80",
+              )}
+            >
+              {offer.excerpt}
+            </p>
+          ) : null}
         </div>
       </div>
-
-      <div className="flex flex-1 flex-col p-6">
-        {storeName ? (
-          <p className="text-[10px] font-bold tracking-[0.22em] text-gold uppercase">
-            {storeName}
-          </p>
-        ) : null}
-        <h3
-          className={cn(
-            "mt-1.5 font-bold tracking-tight",
-            large ? "text-2xl sm:text-3xl" : "text-xl",
-          )}
-        >
-          {offer.title}
-        </h3>
-        {offer.excerpt ? (
-          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-ivory/65">
-            {offer.excerpt}
-          </p>
-        ) : null}
-        <Link
-          href={href}
-          className="mt-auto inline-flex items-center gap-1.5 pt-5 text-[11px] font-semibold tracking-[0.22em] text-gold uppercase transition-colors group-hover:text-gold-soft focus-gold"
-        >
-          <span className="link-underline pb-0.5">
-            {offer.cta.label || "Find out more"}
-          </span>
-          <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden />
-          <span className="absolute inset-0" aria-hidden />
-        </Link>
-      </div>
-    </article>
+    </Link>
   );
 }
 
 /** Hydration-safe "Ends in N days" chip. */
-function CountdownChip({ validUntil }: { validUntil: string }) {
+function CountdownChip({
+  validUntil,
+  onImage,
+}: {
+  validUntil: string;
+  onImage: boolean;
+}) {
   const [days, setDays] = useState<number | null>(null);
 
   useEffect(() => {
@@ -92,7 +115,12 @@ function CountdownChip({ validUntil }: { validUntil: string }) {
 
   if (!validUntil || days === null || days < 0) return null;
   return (
-    <span className="inline-flex items-center gap-1 bg-charcoal/80 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-ivory/90 uppercase backdrop-blur-sm">
+    <span
+      className={cn(
+        "inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs leading-none font-bold",
+        onImage ? "bg-ink/70 text-white" : "bg-white text-ink",
+      )}
+    >
       <Clock className="size-3" aria-hidden />
       {days === 0 ? "Ends today" : days === 1 ? "Ends tomorrow" : `Ends in ${days} days`}
     </span>

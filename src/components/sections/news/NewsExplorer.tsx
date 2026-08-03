@@ -23,7 +23,7 @@ export function NewsExplorer({ articles }: { articles: NewsArticle[] }) {
   const [featured, ...rest] = filtered;
 
   return (
-    <div className="container-site py-14 sm:py-16">
+    <div className="container-site pb-16">
       {categories.length > 1 ? (
         <div role="group" aria-label="Filter news" className="mb-10 flex flex-wrap gap-2">
           <Chip active={category === null} onClick={() => setCategory(null)}>
@@ -38,9 +38,9 @@ export function NewsExplorer({ articles }: { articles: NewsArticle[] }) {
       ) : null}
 
       {filtered.length === 0 ? (
-        <div className="border border-dashed border-charcoal/20 px-6 py-20 text-center">
-          <p className="text-lg font-bold text-charcoal">No stories yet</p>
-          <p className="mt-2 text-sm text-muted-foreground">Check back soon.</p>
+        <div className="rounded-xl bg-cream px-6 py-20 text-center">
+          <p className="heading-m text-ink">No stories yet</p>
+          <p className="text-body mt-2 text-ink-soft">Check back soon.</p>
         </div>
       ) : (
         <AnimatePresence mode="wait">
@@ -53,9 +53,9 @@ export function NewsExplorer({ articles }: { articles: NewsArticle[] }) {
           >
             {featured ? <NewsCard article={featured} featured /> : null}
             {rest.length ? (
-              <div className="mt-14 grid gap-10 border-t border-charcoal/10 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {rest.map((article) => (
-                  <NewsCard key={article.slug} article={article} />
+                  <NewsCard key={article.slug} article={article} className="min-h-80" />
                 ))}
               </div>
             ) : null}
@@ -81,10 +81,8 @@ function Chip({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wide transition-all focus-gold",
-        active
-          ? "border-charcoal bg-charcoal text-ivory"
-          : "border-charcoal/20 text-charcoal/70 hover:border-charcoal/50 hover:text-charcoal",
+        "focus-brand rounded-full px-4 py-2 text-xs leading-none font-bold transition-colors",
+        active ? "bg-yellow text-ink" : "bg-cream text-ink hover:bg-sand",
       )}
     >
       {children}
