@@ -4,7 +4,7 @@
     "titleTemplate": "%s · Guildbourne Centre",
     "defaultTitle": "Guildbourne Centre · Indoor shopping in the heart of Worthing",
     "defaultDescription": "Worthing's only indoor shopping centre — 20+ independent stores, family favourites and everyday essentials under one roof, open seven days a week.",
-    "ogImage": "/images/centre/exterior.jpg",
+    "ogImage": "/images/centre/og.jpg",
     "twitterHandle": "@GuildbourneCtr"
   },
   "routes": {

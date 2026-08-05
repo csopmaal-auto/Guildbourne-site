@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { buildMetadata } from "@/lib/seo";
+
+export const viewport: Viewport = {
+  themeColor: "#ffdb00",
+};
 
 const baloo = Baloo_2({
   variable: "--font-baloo",
