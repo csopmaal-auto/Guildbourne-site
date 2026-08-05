@@ -18,6 +18,10 @@ npm install
 npm run dev
 ```
 
+> If your machine blocks native binaries (e.g. a Windows Application Control policy stops
+> `@next/swc`), use `npm run dev:webpack` — turbopack needs the native compiler, webpack falls
+> back to WASM.
+
 - Site: http://localhost:3000
 - Admin: http://localhost:3000/admin — the dev password is in `.env.local` (default `guildbourne-dev`)
 
