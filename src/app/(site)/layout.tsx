@@ -1,3 +1,4 @@
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import type { SearchItem } from "@/components/layout/SearchOverlay";
@@ -52,15 +53,20 @@ export default function SiteLayout({
 }) {
   return (
     <LenisProvider>
-      <Header
-        navigation={navigation}
-        settings={settings}
-        searchIndex={buildSearchIndex()}
-        menuTiles={homepage.tiles.filter((t) => t.type === "image").slice(0, 2)}
-        newsletter={homepage.newsletter}
-      />
-      <main id="content">{children}</main>
-      <Footer />
+      <AnnouncementBar announcement={settings.announcement} />
+      {/* Positioning context: keeps the absolute header anchored below the
+          announcement bar instead of overlapping it. */}
+      <div className="relative">
+        <Header
+          navigation={navigation}
+          settings={settings}
+          searchIndex={buildSearchIndex()}
+          menuTiles={homepage.tiles.filter((t) => t.type === "image").slice(0, 2)}
+          newsletter={homepage.newsletter}
+        />
+        <main id="content">{children}</main>
+        <Footer />
+      </div>
       {/* Plain script tag so the JSON-LD is present in the server-rendered HTML */}
       <script
         type="application/ld+json"
